@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>講師募集｜MANABIYA Bースタディ【鳥取県倉吉市】</title>
+  <meta name="description" content="MANABIYA Bースタディ（倉吉市）では塾講師を募集中！週1日・1コマからOK。未経験歓迎。Wワーク・副業との両立も可能。時給1,100円〜＋コマ給あり。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #1aaa6e;
+      --green-dark: #148a58;
+      --green-light: #e8f8f1;
+      --green-mid: #b2e8d0;
+      --orange: #f97316;
+      --yellow: #fbbf24;
+      --text: #1a1a1a;
+      --text-mid: #4a4a4a;
+      --text-light: #888;
+      --bg: #f9fafb;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background: var(--green);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .logo-text {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .logo-text span { color: var(--green); }
+
+    .header-cta {
+      background: var(--green);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .header-cta:hover { background: var(--green-dark); }
+
+    /* ===== HERO ===== */
+    .hero {
+      margin-top: 64px;
+      background: linear-gradient(135deg, #0d7a4e 0%, #1aaa6e 50%, #22c77e 100%);
+      padding: 80px 24px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 240px; height: 240px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.1em;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    .hero-sub {
+      color: rgba(255,255,255,0.9);
+      font-size: clamp(15px, 2.5vw, 18px);
+      margin-bottom: 40px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-badge {
+      background: white;
+      color: var(--green-dark);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(249,115,22,0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background: #ea6505;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(249,115,22,0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.6);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ===== URGENT BANNER ===== */
+    .urgent-banner {
+      background: #fff3cd;
+      border-left: 4px solid var(--yellow);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 900px;
+      margin: -28px auto 0;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 10;
+    }
+
+    .urgent-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .urgent-text {
+      font-size: 14px;
+      color: #92400e;
+      font-weight: 600;
+    }
+
+    .urgent-text strong {
+      color: #c2410c;
+      font-size: 15px;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== SECTION ===== */
+    section {
+      padding: 72px 0;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .section-desc {
+      color: var(--text-mid);
+      font-size: 15px;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    /* ===== APPEAL POINTS ===== */
+    .appeals {
+      background: white;
+    }
+
+    .appeal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .appeal-card {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 28px 24px;
+      border: 1px solid var(--border);
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .appeal-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--green);
+    }
+
+    .appeal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--green-mid);
+    }
+
+    .appeal-number {
+      width: 36px; height: 36px;
+      background: var(--green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .appeal-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .appeal-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ===== SALARY ===== */
+    .salary-section {
+      background: var(--green-light);
+    }
+
+    .salary-main {
+      background: white;
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .salary-big {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .salary-big span {
+      font-size: 0.45em;
+      color: var(--text-mid);
+      font-weight: 600;
+    }
+
+    .salary-note {
+      font-size: 14px;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+    }
+
+    .salary-detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .salary-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .salary-detail-icon {
+      width: 24px; height: 24px;
+      background: var(--green);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ===== JOB DETAILS ===== */
+    .job-table {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .job-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .job-row:last-child { border-bottom: none; }
+
+    .job-label {
+      background: var(--green-light);
+      padding: 20px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-dark);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .job-label-icon { font-size: 16px; }
+
+    .job-value {
+      padding: 20px 24px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    .job-value strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .job-value ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job-value ul li {
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .job-value ul li::before {
+      content: '・';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      background: var(--green-light);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--green-mid);
+    }
+
+    /* ===== WORK STYLE ===== */
+    .work-style-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .work-style-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .work-style-card .icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .work-style-card .label {
+      font-size: 12px;
+      color: var(--text-light);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .work-style-card .value {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ===== REQUIREMENTS ===== */
+    .req-section {
+      background: white;
+    }
+
+    .req-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .req-card {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .req-card.required { border-color: var(--green); }
+    .req-card.welcome { border-color: var(--border); }
+
+    .req-card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .req-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .req-badge.required {
+      background: var(--green);
+      color: white;
+    }
+
+    .req-badge.welcome {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .req-card-title h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .req-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .req-list li {
+      font-size: 14px;
+      color: var(--text-mid);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .req-list li::before {
+      content: '◎';
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-size: 12px;
+      top: 1px;
+    }
+
+    .open-notice {
+      background: linear-gradient(135deg, var(--green-light), #d1fae5);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+      border: 1px solid var(--green-mid);
+      text-align: center;
+    }
+
+    .open-notice .title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+
+    .open-notice .desc {
+      font-size: 14px;
+      color: var(--text-mid);
+    }
+
+    .open-notice .items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .open-item {
+      background: white;
+      color: var(--green-dark);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 24px;
+      border: 2px solid var(--green);
+    }
+
+    /* ===== LOCATION ===== */
+    .location-section { background: var(--bg); }
+
+    .location-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .location-info {
+      padding: 32px;
+    }
+
+    .location-name {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--green-dark);
+    }
+
+    .location-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .location-list li {
+      font-size: 14px;
+      color: var(--text-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .location-list li .loc-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .map-embed {
+      width: 100%;
+      height: 320px;
+      border: 0;
+      display: block;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #0d7a4e 0%, #1aaa6e 100%);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: white;
+      font-size: clamp(24px, 4vw, 40px);
+      font-weight: 900;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+
+    .cta-section h2 em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-card-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .cta-card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .cta-card .cta-icon { font-size: 36px; margin-bottom: 12px; }
+    .cta-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+    .cta-card p { font-size: 13px; color: var(--text-mid); margin-bottom: 16px; }
+
+    .btn-apply {
+      display: inline-block;
+      width: 100%;
+      background: var(--green);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-apply:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-apply.orange { background: var(--orange); }
+    .btn-apply.orange:hover { background: #ea6505; }
+
+    .cta-deadline {
+      color: rgba(255,255,255,0.8);
+      font-size: 13px;
+    }
+
+    .cta-deadline strong {
+      color: var(--yellow);
+      font-size: 15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.6);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--green); }
+
+    .footer-address {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    /* ===== SCROLL HIGHLIGHT ===== */
+    .highlight {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      header { padding: 0 16px; }
+      .logo-text { font-size: 15px; }
+      .header-cta { padding: 8px 14px; font-size: 13px; }
+
+      .hero { padding: 56px 16px 80px; }
+
+      .urgent-banner {
+        margin: -20px 16px 0;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .job-row { grid-template-columns: 1fr; }
+      .job-label { border-bottom: none; }
+
+      .req-grid { grid-template-columns: 1fr; }
+
+      .cta-card-group { grid-template-columns: 1fr; }
+
+      section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <span class="logo-badge">塾講師 募集中</span>
+    <span class="logo-text">MANABIYA <span>B</span>ースタディ</span>
+  </a>
+  <a href="#apply" class="header-cta">今すぐ応募する →</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">🎓 鳥取県倉吉市 / 塾講師 採用情報</div>
+  <h1>
+    子どもの成長が、<br>
+    <em>あなたの喜びになる。</em>
+  </h1>
+  <p class="hero-sub">
+    得意科目を活かして、生徒と向き合える個別指導塾。<br>
+    週1日・1コマからOK。未経験・副業・Wワーク大歓迎。
+  </p>
+  <div class="hero-badges">
+    <span class="hero-badge">⏰ 週1日・1コマからOK</span>
+    <span class="hero-badge">💰 時給1,100円〜＋コマ給</span>
+    <span class="hero-badge">✅ 未経験歓迎</span>
+    <span class="hero-badge">🏠 副業・Wワーク可</span>
+    <span class="hero-badge">🚗 駐車場あり</span>
+  </div>
+  <div class="hero-cta-group">
+    <a href="#apply" class="btn-primary">📝 応募する（無料・簡単）</a>
+    <a href="#details" class="btn-secondary">📋 詳しい募集要項</a>
+  </div>
+</section>
+
+<!-- URGENT BANNER -->
+<div class="container">
+  <div class="urgent-banner">
+    <span class="urgent-icon">🔥</span>
+    <div class="urgent-text">
+      <strong>【急募】生徒数増加につき新規講師を緊急募集中！</strong><br>
+      内定まで最短2週間以内。お早めにご応募ください。
+    </div>
+  </div>
+</div>
+
+<!-- APPEAL POINTS -->
+<section class="appeals">
+  <div class="container">
+    <div class="section-label">WHY MANABIYA</div>
+    <h2 class="section-title">MANABIYAで働く<br>6つの魅力</h2>
+    <p class="section-desc">多くの講師が選ぶ理由があります。あなたのライフスタイルに合わせて、無理なく長く続けられる環境です。</p>
+    <div class="appeal-grid">
+      <div class="appeal-card">
+        <div class="appeal-number">1</div>
+        <h3>得意科目だけ担当できる</h3>
+        <p>国語・数学・英語・理科・社会から得意科目を選択。専門性を活かして自信を持って指導できます。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-number">2</div>
+        <h3>教材準備・採点は最小限</h3>
+        <p>専用システムで指導報告書は簡単入力。教材準備や採点業務は最小限に抑えられ、指導に集中できます。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-number">3</div>
+        <h3>担当制で生徒と深く関わる</h3>
+        <p>担当制だから生徒と長期的な信頼関係を築けます。成長を一緒に実感できるのがこの仕事の醍醐味。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-number">4</div>
+        <h3>週1日・1コマから働ける</h3>
+        <p>大学生・社会人・主婦(夫)の方まで。自分のペースで無理なくスタートできます。残業は一切ありません。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-number">5</div>
+        <h3>ICTツールで最先端の指導</h3>
+        <p>ICTサポートシステム「manabo」導入。生徒の自学力を支援する、新しいスタイルの個別指導を体験できます。</p>
+      </div>
+      <div class="appeal-card">
+        <div class="appeal-number">6</div>
+        <h3>副業・Wワークも全然OK</h3>
+        <p>平日夕方〜夜・土日中心の勤務なので、本業や他のアルバイトと無理なく両立できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SALARY -->
+<section class="salary-section">
+  <div class="container">
+    <div class="section-label">SALARY</div>
+    <h2 class="section-title">給与・報酬</h2>
+    <p class="section-desc">指導時間にはコマ給が上乗せされるので、しっかり稼げます。</p>
+
+    <div class="salary-main">
+      <div class="salary-big">1,100<span>円〜 / 時間</span></div>
+      <div class="salary-note">＋ コマ給（1コマ80分あたり <strong class="highlight">1,500円〜</strong>）が別途支給</div>
+
+      <div class="salary-detail-list">
+        <div class="salary-detail-item">
+          <div class="salary-detail-icon">✓</div>
+          <div>授業単価：<strong class="highlight">1,500円〜</strong>（1コマ80分）。指導中はコマ給がしっかり付きます。</div>
+        </div>
+        <div class="salary-detail-item">
+          <div class="salary-detail-icon">✓</div>
+          <div>指導時間以外（報告書作成・質問対応など）は<strong class="highlight">時給制</strong>で支給。無給作業はありません。</div>
+        </div>
+        <div class="salary-detail-item">
+          <div class="salary-detail-icon">✓</div>
+          <div><strong class="highlight">経験・能力に応じて昇給あり。</strong>頑張りがしっかり評価されます。</div>
+        </div>
+        <div class="salary-detail-item">
+          <div class="salary-detail-icon">✓</div>
+          <div>試用期間中（1ヶ月）も本採用と<strong class="highlight">同じ給与</strong>が支払われます。</div>
+        </div>
+        <div class="salary-detail-item">
+          <div class="salary-detail-icon">✓</div>
+          <div><strong class="highlight">交通費支給あり</strong>。通勤費の心配なし。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WORK STYLE -->
+<section>
+  <div class="container">
+    <div class="section-label">WORK STYLE</div>
+    <h2 class="section-title">働き方・勤務スタイル</h2>
+    <p class="section-desc">自分のライフスタイルに合わせて、柔軟に働けます。</p>
+
+    <div class="work-style-grid" style="margin-bottom: 32px;">
+      <div class="work-style-card">
+        <span class="icon">📅</span>
+        <div class="label">最低勤務日数</div>
+        <div class="value">週1日からOK</div>
+      </div>
+      <div class="work-style-card">
+        <span class="icon">⏱</span>
+        <div class="label">最低勤務時間</div>
+        <div class="value">1コマ（80分）〜</div>
+      </div>
+      <div class="work-style-card">
+        <span class="icon">🌙</span>
+        <div class="label">平日</div>
+        <div class="value">16:00〜22:00</div>
+      </div>
+      <div class="work-style-card">
+        <span class="icon">☀️</span>
+        <div class="label">土日祝</div>
+        <div class="value">10:00〜22:00</div>
+      </div>
+      <div class="work-style-card">
+        <span class="icon">🚫</span>
+        <div class="label">残業</div>
+        <div class="value">一切なし</div>
+      </div>
+      <div class="work-style-card">
+        <span class="icon">🗓</span>
+        <div class="label">休暇</div>
+        <div class="value">シフト制・有給あり</div>
+      </div>
+    </div>
+
+    <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: var(--shadow); border-left: 4px solid var(--green);">
+      <div style="font-weight: 700; margin-bottom: 12px; color: var(--green-dark);">💡 こんな働き方ができます（例）</div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; color: var(--text-mid);">
+        <div>📌 <strong>平日のみ</strong>：19:00〜22:00（仕事帰りにWワーク）</div>
+        <div>📌 <strong>土日のみ</strong>：13:00〜18:30（午後をしっかり活用）</div>
+        <div>📌 <strong>週1短時間</strong>：土曜1コマだけ（無理なくスタート）</div>
+        <div>📌 <strong>がっつり稼ぐ</strong>：土曜 10:00〜18:30（しっかり稼ぎたい方）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- JOB DETAILS -->
+<section id="details" style="background: white;">
+  <div class="container">
+    <div class="section-label">JOB DETAILS</div>
+    <h2 class="section-title">募集要項</h2>
+    <p class="section-desc">詳しい勤務条件はこちらをご確認ください。</p>
+
+    <div class="job-table">
+      <div class="job-row">
+        <div class="job-label"><span class="job-label-icon">📝</span>職種</div>
+        <div class="job-value">
+          <strong>塾講師（個別指導）</strong>
+          小・中・高校生を対象とした1対2形式の個別指導
+        </div>
+      </div>
+      <div class="job-row">
+        <div class="job-label"><span class="job-label-icon">📋</span>仕事内容</div>
+        <div class="job-value">
+          <ul>
+            <li>生徒への個別指導（国語・数学・英語・理科・社会から得意科目を担当）</li>
+            <li>授業後の指導報告書の作成（専用システム／簡単入力）</li>
+            <li>自習室利用生徒の学習フォロー・質問対応</li>
+            <li>体験授業のサポートや保護者対応の補助など、教室運営に関わる業務</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-row">
+        <div class="job-label"><span class="job-label-icon">💼</span>雇用形態</div>
+        <div class="job-value">
+          <strong>アルバイト・パート</strong>
+          契約期間：6ヶ月ごと（更新は3月・9月）<br>
+          ※実績に応じて契約更新を判断。試用期間1ヶ月あり（条件同一）
+        </div>
+      </div>
+      <div class="job-row">
+        <div class="job-label"><span class="job-label-icon">💰</span>給与</div>
+        <div class="job-value">
+          <strong>時給 1,100円〜1,700円</strong>
+          授業コマ給：1コマ（80分）あたり1,500円〜<br>
+          指導時間以外は時給制にて支給<br>
+          経験・能力に応じて昇給あり<br>
+          交通費支給あり
+        </div>
+      </div>
+      <div class="job-row">
+        <div class="job-label"><span class="job-label-icon">⏰</span>勤務時間</div>
+        <div class="job-value">
+          <strong>シフト制（週1日・1コマ〜）</strong>
+          平日：16:00〜22:00<br>
+          土日祝：10:00〜22:00<br>
+          ※残業なし ／ 1日4時間以内もOK
+        </div>
+      </div>
+      <div class="job-row">
+        <div class="job-label"><span class="job-label-icon">🏖</span>休日・休暇</div>
+        <div class="job-value">
+          <ul>
+            <li>シフト制（希望を考慮して調整）</li>
+            <li>年次有給休暇あり（法定通り付与）</li>
+            <li>テスト期間・家庭の事情など柔軟にお休み調整可能</li>
+          </ul>
+        </div>
+      </div>
+      <div class="job-row">
+        <div class="job-label"><span class="job-label-icon">🎁</span>待遇・福利厚生</div>
+        <div class="job-value">
+          <div class="tag-list">
+            <span class="tag">交通費支給</span>
+            <span class="tag">労災保険</span>
+            <span class="tag">昇給あり</span>
+            <span class="tag">副業・Wワーク可</span>
+            <span class="tag">駐車場あり</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- REQUIREMENTS -->
+<section class="req-section">
+  <div class="container">
+    <div class="section-label">REQUIREMENTS</div>
+    <h2 class="section-title">応募資格・求める人材</h2>
+    <p class="section-desc">学歴・指導経験は問いません。「教えることが好き」な気持ちを大切にしています。</p>
+
+    <div class="req-grid">
+      <div class="req-card required">
+        <div class="req-card-title">
+          <span class="req-badge required">必須要件</span>
+          <h3>こんな方</h3>
+        </div>
+        <ul class="req-list">
+          <li>生徒や保護者と前向きにコミュニケーションが取れる方</li>
+          <li>人に教えること、生徒の成長を支えることにやりがいを感じる方</li>
+          <li>柔軟に物事に対応でき、チームで協力しながら仕事ができる方</li>
+        </ul>
+      </div>
+      <div class="req-card welcome">
+        <div class="req-card-title">
+          <span class="req-badge welcome">歓迎要件</span>
+          <h3>あれば尚良し</h3>
+        </div>
+        <ul class="req-list">
+          <li>個別指導塾・集団塾・学校などでの指導経験がある方</li>
+          <li>家庭教師・教員など、教育業界の経験がある方</li>
+          <li>長期的に勤務いただける方</li>
+          <li>社会人の経験や専門知識を教育に活かしたい方</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="open-notice">
+      <div class="title">🎉 こんな方も大歓迎です！</div>
+      <div class="desc">経験・学歴・資格よりも「やる気」を重視します</div>
+      <div class="items">
+        <span class="open-item">未経験者 OK</span>
+        <span class="open-item">既卒・第二新卒 OK</span>
+        <span class="open-item">副業・Wワーク OK</span>
+        <span class="open-item">英語力不問</span>
+        <span class="open-item">社会人 歓迎</span>
+        <span class="open-item">主婦(夫) 歓迎</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LOCATION -->
+<section class="location-section">
+  <div class="container">
+    <div class="section-label">LOCATION</div>
+    <h2 class="section-title">勤務地・アクセス</h2>
+    <p class="section-desc">倉吉市内の通いやすい場所にあります。</p>
+
+    <div class="location-card">
+      <div class="location-info">
+        <div class="location-name">📍 MANABIYA Bースタディ</div>
+        <ul class="location-list">
+          <li><span class="loc-icon">🏠</span>〒682-0016　鳥取県倉吉市海田西町2丁目95</li>
+          <li><span class="loc-icon">🚗</span>倉吉駅から車で約5分（徒歩約10分）</li>
+          <li><span class="loc-icon">🚌</span>海田車庫（バス停）から徒歩3分</li>
+          <li><span class="loc-icon">🅿️</span>「人形のはなふさ」隣・「倉吉スシロー」の目の前で分かりやすい立地</li>
+          <li><span class="loc-icon">🚲</span>自転車・バイク通勤OK ／ 駐車場あり</li>
+          <li><span class="loc-icon">⭐</span>転勤なし（この教室のみ）</li>
+        </ul>
+      </div>
+      <iframe
+        class="map-embed"
+        src="https://www.google.com/maps?q=鳥取県倉吉市海田西町2丁目95&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="MANABIYA Bースタディ 地図">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA / APPLY -->
+<section class="cta-section" id="apply">
+  <h2>一緒に、子どもたちの<br><em>未来を育てませんか？</em></h2>
+  <p>生徒数増加につき、今すぐ動ける方を求めています。<br>まずはお気軽にお問い合わせください。</p>
+
+  <div class="cta-card-group">
+    <div class="cta-card">
+      <div class="cta-icon">🌐</div>
+      <h3>Webから応募する</h3>
+      <p>フォームから簡単に応募できます。24時間受付中。</p>
+      <a href="https://beducate.jp/recruit/" target="_blank" rel="noopener" class="btn-apply orange">応募フォームへ →</a>
+    </div>
+    <div class="cta-card">
+      <div class="cta-icon">📞</div>
+      <h3>電話でお問い合わせ</h3>
+      <p>ご不明な点はお気軽にお電話ください。</p>
+      <a href="https://beducate.jp/recruit/" target="_blank" rel="noopener" class="btn-apply">詳細ページを見る →</a>
+    </div>
+  </div>
+
+  <p class="cta-deadline">
+    ⚡ <strong>急募！内定まで最短2週間以内</strong>を予定しています。<br>
+    お早めにご応募ください。
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MANABIYA <span>B</span>ースタディ</div>
+  <div class="footer-address">
+    〒682-0016　鳥取県倉吉市海田西町2丁目95<br>
+    運営：BEducate（ビーエデュケイト）
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 BEducate / MANABIYA Bースタディ. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
