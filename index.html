@@ -88,12 +88,9 @@
     .hdr.scrolled { box-shadow: var(--shadow); }
     .hdr-logo { display:flex; align-items:center; gap:10px; }
     .hdr-logo-mark {
-      width:30px; height:30px; border-radius:8px;
-      background: linear-gradient(135deg, var(--g6), var(--g5));
-      display:flex; align-items:center; justify-content:center;
-      box-shadow: 0 2px 8px rgba(26,170,110,0.3);
+      height:36px; width:auto; display:block;
     }
-    .hdr-logo-mark svg { width:16px; height:16px; color:white; }
+    .hdr-logo-mark img { height:36px; width:auto; display:block; object-fit:contain; }
     .hdr-brand { display:flex; flex-direction:column; gap:0; }
     .hdr-brand-main { font-size:14px; font-weight:800; color:var(--ink); letter-spacing:.02em; line-height:1.2; }
     .hdr-brand-main span { color:var(--g6); }
@@ -552,8 +549,8 @@
     footer { background:var(--ink2); padding:36px; border-top:none; }
     .footer-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
     .footer-logo { display:flex; align-items:center; gap:10px; }
-    .footer-logo-mark { width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,var(--g6),var(--g5)); display:flex; align-items:center; justify-content:center; }
-    .footer-logo-mark svg { width:16px; height:16px; color:white; }
+    .footer-logo-mark { height:36px; width:auto; display:block; }
+    .footer-logo-mark img { height:36px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1); }
     .footer-brand { display:flex; flex-direction:column; }
     .footer-brand-main { font-size:14px; font-weight:800; color:white; }
     .footer-brand-main span { color:var(--g5); }
@@ -679,7 +676,9 @@
 <!-- ══════════ HEADER ══════════ -->
 <header class="hdr" id="hdr">
   <div class="hdr-logo">
-    <div class="hdr-logo-mark"><svg><use href="#ico-book"/></svg></div>
+    <div class="hdr-logo-mark">
+      <img src="images/logo.png" alt="MANABIYA Bースタディ ロゴ">
+    </div>
     <div class="hdr-brand">
       <div class="hdr-brand-main">MANABIYA <span>B</span>ースタディ</div>
       <div class="hdr-brand-sub">運営：beducate（ベデュケイト）</div>
@@ -745,7 +744,7 @@
     <!-- Image -->
     <div class="hero-image-wrap reveal-right">
       <div class="hero-image-frame">
-        <img src="images/hero.jpg" alt="MANABIYA Bースタディ 講師と生徒の授業風景" loading="eager">
+        <img src="images/hero.png" alt="MANABIYA Bースタディ 講師と生徒の授業風景" loading="eager">
       </div>
       <div class="hero-dots"></div>
       <div class="hero-badge-float b1">
@@ -1269,7 +1268,9 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <div class="footer-logo-mark"><svg><use href="#ico-book"/></svg></div>
+      <div class="footer-logo-mark">
+        <img src="images/logo.png" alt="MANABIYA Bースタディ ロゴ">
+      </div>
       <div class="footer-brand">
         <div class="footer-brand-main">MANABIYA <span>B</span>ースタディ</div>
         <div class="footer-brand-sub">運営：beducate（ベデュケイト）</div>
