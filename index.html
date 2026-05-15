@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>講師募集｜MANABIYA Bースタディ【鳥取県倉吉市】</title>
-  <meta name="description" content="MANABIYA Bースタディ（倉吉市）では塾講師を募集中。週1日・1コマからOK。未経験歓迎。時給1,100円〜＋コマ給。副業・Wワーク可。">
+  <meta name="description" content="MANABIYA Bースタディ（倉吉市）では塾講師を募集。1コマ80分1,500円〜のコマ給制。週1日からOK。未経験歓迎。副業・Wワーク可。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -13,457 +13,593 @@
     :root {
       --g9: #064e35;
       --g8: #0d7a4e;
+      --g7: #148a58;
       --g6: #1aaa6e;
       --g5: #22c77e;
-      --g2: #d1f5e5;
-      --g1: #edfbf4;
-      --k9: #0d1117;
-      --k8: #161b22;
-      --k7: #21262d;
-      --k6: #374151;
-      --k5: #6b7280;
-      --k4: #9ca3af;
-      --k3: #d1d5db;
-      --k2: #e5e7eb;
-      --k1: #f3f4f6;
-      --k0: #f9fafb;
+      --g4: #4dd9a0;
+      --g2: #c8f0de;
+      --g1: #e8f8f1;
+      --g0: #f2fbf7;
+      --ink: #0f1117;
+      --ink2: #1e2329;
+      --mid: #4b5563;
+      --sub: #6b7280;
+      --muted: #9ca3af;
+      --line: #e5e7eb;
+      --line2: #f3f4f6;
+      --bg: #f8fafb;
       --white: #ffffff;
       --orange: #f97316;
       --gold: #f59e0b;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-      --shadow: 0 4px 16px rgba(0,0,0,0.08);
-      --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
-      --radius: 8px;
-      --radius-lg: 12px;
+      --red: #ef4444;
+      --r-sm: 8px;
+      --r: 12px;
+      --r-lg: 16px;
+      --r-xl: 24px;
+      --shadow-xs: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow: 0 4px 20px rgba(0,0,0,0.07);
+      --shadow-md: 0 8px 32px rgba(0,0,0,0.09);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.11);
+      --shadow-green: 0 8px 32px rgba(26,170,110,0.2);
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Noto Sans JP', sans-serif; color: var(--k9); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Noto Sans JP', sans-serif; color: var(--ink); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
 
-    /* ── HEADER ── */
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn   { from { opacity:0; } to { opacity:1; } }
+    @keyframes slideRight { from { opacity:0; transform:translateX(-24px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes slideLeft  { from { opacity:0; transform:translateX(24px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes scaleIn  { from { opacity:0; transform:scale(0.94); } to { opacity:1; transform:scale(1); } }
+    @keyframes pulse-dot { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.3);opacity:.6} }
+    @keyframes float     { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes shimmer   { from{background-position:200% 0} to{background-position:-200% 0} }
+    @keyframes spin      { to { transform: rotate(360deg); } }
+    @keyframes bar-grow  { from{width:0} to{width:100%} }
+
+    /* Scroll-reveal base */
+    .reveal { opacity:0; transform:translateY(28px); transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+    .reveal.visible { opacity:1; transform:none; }
+    .reveal-left  { opacity:0; transform:translateX(-28px); transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+    .reveal-left.visible  { opacity:1; transform:none; }
+    .reveal-right { opacity:0; transform:translateX(28px); transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+    .reveal-right.visible { opacity:1; transform:none; }
+    .reveal-scale { opacity:0; transform:scale(0.93); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+    .reveal-scale.visible { opacity:1; transform:none; }
+    .delay-1 { transition-delay:.1s !important; }
+    .delay-2 { transition-delay:.18s !important; }
+    .delay-3 { transition-delay:.26s !important; }
+    .delay-4 { transition-delay:.34s !important; }
+    .delay-5 { transition-delay:.42s !important; }
+    .delay-6 { transition-delay:.50s !important; }
+
+    /* ─── HEADER ─── */
     .hdr {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      height: 60px;
-      background: rgba(13,17,23,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: fixed; top:0; left:0; right:0; z-index:200;
+      height: 62px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 32px;
+      padding: 0 36px;
+      transition: box-shadow .3s;
     }
-    .hdr-logo { display: flex; align-items: center; gap: 10px; }
+    .hdr.scrolled { box-shadow: var(--shadow); }
+    .hdr-logo { display:flex; align-items:center; gap:10px; }
     .hdr-logo-mark {
-      width: 28px; height: 28px;
-      background: var(--g6); border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
+      width:30px; height:30px; border-radius:8px;
+      background: linear-gradient(135deg, var(--g6), var(--g5));
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 2px 8px rgba(26,170,110,0.3);
     }
-    .hdr-logo-mark svg { width: 16px; height: 16px; color: white; }
-    .hdr-logo-name { font-size: 14px; font-weight: 700; color: white; letter-spacing: 0.02em; }
-    .hdr-logo-name span { color: var(--g5); }
-    .hdr-nav { display: flex; align-items: center; gap: 24px; }
-    .hdr-nav a { font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 500; transition: color .2s; }
-    .hdr-nav a:hover { color: white; }
+    .hdr-logo-mark svg { width:16px; height:16px; color:white; }
+    .hdr-brand { display:flex; flex-direction:column; gap:0; }
+    .hdr-brand-main { font-size:14px; font-weight:800; color:var(--ink); letter-spacing:.02em; line-height:1.2; }
+    .hdr-brand-main span { color:var(--g6); }
+    .hdr-brand-sub { font-size:10px; color:var(--muted); font-weight:500; letter-spacing:.05em; }
+    .hdr-nav { display:flex; align-items:center; gap:28px; }
+    .hdr-nav a { font-size:13px; color:var(--sub); font-weight:500; transition:color .2s; position:relative; }
+    .hdr-nav a::after { content:''; position:absolute; bottom:-2px; left:0; right:0; height:2px; background:var(--g6); border-radius:2px; transform:scaleX(0); transition:transform .2s; }
+    .hdr-nav a:hover { color:var(--g6); }
+    .hdr-nav a:hover::after { transform:scaleX(1); }
     .hdr-cta {
-      background: var(--g6); color: white;
-      padding: 9px 20px; border-radius: var(--radius);
-      font-size: 13px; font-weight: 700;
-      transition: background .2s, transform .15s;
-      letter-spacing: 0.02em;
-    }
-    .hdr-cta:hover { background: var(--g5); transform: translateY(-1px); }
-
-    /* ── HERO ── */
-    .hero {
-      margin-top: 60px;
-      background: var(--k9);
-      padding: 100px 32px 120px;
-      position: relative; overflow: hidden;
-    }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(26,170,110,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26,170,110,0.06) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-    .hero-glow {
-      position: absolute; top: -120px; right: -80px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(26,170,110,0.18) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-glow-2 {
-      position: absolute; bottom: -100px; left: 20%;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(26,170,110,0.08) 0%, transparent 65%);
-    }
-    .hero-inner { max-width: 860px; margin: 0 auto; position: relative; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      border: 1px solid rgba(26,170,110,0.4);
-      background: rgba(26,170,110,0.08);
-      color: var(--g5); font-size: 12px; font-weight: 600;
-      padding: 5px 14px; border-radius: 20px; margin-bottom: 28px;
-      letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .hero-eyebrow-dot { width: 6px; height: 6px; background: var(--g5); border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
-    .hero h1 {
-      font-size: clamp(32px, 5.5vw, 60px);
-      font-weight: 900; color: white; line-height: 1.2;
-      margin-bottom: 24px; letter-spacing: -0.02em;
-    }
-    .hero h1 .accent { color: var(--g5); }
-    .hero-lead {
-      font-size: clamp(15px, 2vw, 17px);
-      color: rgba(255,255,255,0.6); max-width: 520px;
-      margin-bottom: 48px; font-weight: 400; line-height: 1.8;
-    }
-    .hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
-    .chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 500;
-      padding: 7px 14px; border-radius: 20px;
-    }
-    .chip svg { width: 14px; height: 14px; color: var(--g5); flex-shrink: 0; }
-    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .btn-hero {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--g6); color: white;
-      padding: 15px 32px; border-radius: var(--radius);
-      font-size: 15px; font-weight: 800;
-      transition: all .2s; box-shadow: 0 0 0 0 rgba(26,170,110,0.4);
-      letter-spacing: 0.02em;
-    }
-    .btn-hero:hover { background: var(--g5); transform: translateY(-2px); box-shadow: 0 0 32px rgba(26,170,110,0.3); }
-    .btn-hero svg { width: 18px; height: 18px; }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 14px 24px; border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--g6), var(--g7));
+      color:white; padding:9px 22px; border-radius:var(--r-sm);
+      font-size:13px; font-weight:700; letter-spacing:.03em;
+      box-shadow: 0 2px 12px rgba(26,170,110,0.25);
       transition: all .2s;
     }
-    .btn-ghost:hover { color: white; border-color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.05); }
-    .btn-ghost svg { width: 16px; height: 16px; }
+    .hdr-cta:hover { transform:translateY(-1px); box-shadow:0 4px 18px rgba(26,170,110,0.35); }
 
-    /* ── URGENT ── */
-    .urgent-wrap { background: var(--k9); padding: 0 32px 48px; }
-    .urgent {
-      max-width: 860px; margin: 0 auto;
-      background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(245,158,11,0.08));
-      border: 1px solid rgba(249,115,22,0.3);
-      border-radius: var(--radius-lg);
-      padding: 18px 24px;
-      display: flex; align-items: center; gap: 16px;
+    /* ─── HERO ─── */
+    .hero {
+      margin-top: 62px;
+      background: var(--white);
+      padding: 72px 36px 80px;
+      overflow: hidden; position: relative;
     }
-    .urgent-icon { color: var(--orange); flex-shrink: 0; }
-    .urgent-icon svg { width: 22px; height: 22px; }
-    .urgent-body { font-size: 14px; color: rgba(255,255,255,0.85); }
-    .urgent-body strong { color: var(--gold); font-weight: 700; }
-
-    /* ── SECTION BASE ── */
-    .sec { padding: 80px 32px; }
-    .sec-alt { background: var(--k0); }
-    .sec-dark { background: var(--k9); }
-    .container { max-width: 860px; margin: 0 auto; }
-    .sec-header { margin-bottom: 48px; }
-    .sec-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--g6); margin-bottom: 10px;
-      display: flex; align-items: center; gap: 8px;
+    /* Decorative background elements */
+    .hero-bg-circle {
+      position:absolute; border-radius:50%;
+      background: radial-gradient(circle, var(--g1) 0%, transparent 70%);
+      pointer-events:none;
     }
-    .sec-eyebrow::after { content: ''; height: 1px; width: 32px; background: var(--g6); display: block; }
-    .sec-title { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; line-height: 1.25; letter-spacing: -0.01em; }
-    .sec-title-light { color: white; }
-    .sec-sub { margin-top: 12px; font-size: 15px; color: var(--k5); max-width: 520px; }
-    .sec-sub-light { color: rgba(255,255,255,0.5); }
-
-    /* ── APPEAL GRID ── */
-    .appeal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .appeal-card {
-      background: var(--white); border: 1px solid var(--k2);
-      border-radius: var(--radius-lg); padding: 28px 24px;
-      transition: border-color .2s, box-shadow .2s, transform .2s;
-      position: relative; overflow: hidden;
+    .hero-bg-circle.c1 { width:500px; height:500px; top:-80px; right:-100px; opacity:.8; }
+    .hero-bg-circle.c2 { width:300px; height:300px; bottom:-60px; left:5%; opacity:.5; }
+    .hero-inner {
+      max-width: 1040px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; align-items: center;
+      position: relative;
     }
-    .appeal-card::after {
-      content: attr(data-num);
-      position: absolute; right: 16px; top: 12px;
-      font-size: 48px; font-weight: 900; color: var(--k1);
-      line-height: 1; font-variant-numeric: tabular-nums;
+    .hero-text { animation: fadeUp .8s cubic-bezier(.22,1,.36,1) both; }
+    .hero-eyebrow {
+      display:inline-flex; align-items:center; gap:8px;
+      background: var(--g1); color:var(--g7);
+      font-size:12px; font-weight:700; padding:5px 14px;
+      border-radius:20px; margin-bottom:22px;
+      border: 1px solid var(--g2); letter-spacing:.08em;
     }
-    .appeal-card:hover { border-color: var(--g2); box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .appeal-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: var(--g1); display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px; color: var(--g6);
+    .hero-eyebrow-dot {
+      width:7px; height:7px; background:var(--g5); border-radius:50%;
+      animation: pulse-dot 2s ease-in-out infinite;
     }
-    .appeal-icon svg { width: 22px; height: 22px; }
-    .appeal-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-    .appeal-card p { font-size: 13px; color: var(--k5); line-height: 1.75; }
-
-    /* ── SALARY ── */
-    .salary-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .salary-main {
-      background: var(--k8); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-lg); padding: 36px; grid-column: 1;
+    .hero h1 {
+      font-size: clamp(30px, 3.8vw, 48px);
+      font-weight:900; line-height:1.2; margin-bottom:18px;
+      letter-spacing:-.02em; color:var(--ink);
     }
-    .salary-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; color: var(--g5); text-transform: uppercase; margin-bottom: 12px; }
-    .salary-num { font-size: clamp(40px, 6vw, 56px); font-weight: 900; color: white; line-height: 1; margin-bottom: 4px; }
-    .salary-num sub { font-size: 0.4em; font-weight: 600; color: rgba(255,255,255,0.5); vertical-align: baseline; margin-left: 2px; }
-    .salary-note { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
-    .salary-rows { display: flex; flex-direction: column; gap: 14px; }
-    .salary-row { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; color: rgba(255,255,255,0.7); }
-    .salary-row-icon { color: var(--g5); flex-shrink: 0; margin-top: 2px; }
-    .salary-row-icon svg { width: 16px; height: 16px; }
-    .salary-row strong { color: white; }
-    .salary-side { display: flex; flex-direction: column; gap: 16px; }
-    .salary-card {
-      background: var(--k8); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-lg); padding: 24px;
-      flex: 1; display: flex; flex-direction: column; gap: 8px;
+    .hero h1 .accent { color:var(--g6); }
+    .hero h1 .underline {
+      position:relative; display:inline-block;
     }
-    .salary-card-icon { color: var(--g5); }
-    .salary-card-icon svg { width: 20px; height: 20px; }
-    .salary-card-title { font-size: 13px; color: rgba(255,255,255,0.5); }
-    .salary-card-value { font-size: 17px; font-weight: 700; color: white; }
-
-    /* ── WORKSTYLE ── */
-    .ws-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
-    .ws-card {
-      background: var(--white); border: 1px solid var(--k2);
-      border-radius: var(--radius-lg); padding: 24px 20px;
-      display: flex; flex-direction: column; gap: 10px;
+    .hero h1 .underline::after {
+      content:''; position:absolute; left:0; bottom:-2px; right:0; height:4px;
+      background: linear-gradient(90deg, var(--g5), var(--g4));
+      border-radius:2px;
     }
-    .ws-card-icon { color: var(--g6); }
-    .ws-card-icon svg { width: 22px; height: 22px; }
-    .ws-card-label { font-size: 12px; color: var(--k4); font-weight: 500; }
-    .ws-card-value { font-size: 17px; font-weight: 700; color: var(--k9); }
-    .ws-examples {
-      background: var(--k1); border-radius: var(--radius-lg);
-      padding: 24px 28px; border-left: 3px solid var(--g6);
+    .hero-lead { font-size:16px; color:var(--sub); margin-bottom:36px; line-height:1.8; }
+    .hero-chips { display:flex; flex-wrap:wrap; gap:9px; margin-bottom:36px; }
+    .hero-chip {
+      display:inline-flex; align-items:center; gap:6px;
+      background:var(--white); border:1.5px solid var(--line);
+      color:var(--mid); font-size:13px; font-weight:600;
+      padding:7px 14px; border-radius:20px;
+      box-shadow: var(--shadow-xs);
+      transition: all .2s;
     }
-    .ws-examples-title { font-size: 13px; font-weight: 700; color: var(--g8); margin-bottom: 14px; }
-    .ws-example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .ws-example { font-size: 13px; color: var(--k6); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
-    .ws-example svg { width: 14px; height: 14px; color: var(--g6); flex-shrink: 0; margin-top: 2px; }
-
-    /* ── JOB TABLE ── */
-    .job-table { background: var(--white); border: 1px solid var(--k2); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
-    .job-row { display: grid; grid-template-columns: 160px 1fr; border-bottom: 1px solid var(--k2); }
-    .job-row:last-child { border-bottom: none; }
-    .job-th {
-      background: var(--k0); padding: 20px 20px;
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 13px; font-weight: 700; color: var(--k6);
+    .hero-chip:hover { border-color:var(--g4); color:var(--g7); box-shadow:var(--shadow); transform:translateY(-1px); }
+    .hero-chip svg { width:14px; height:14px; color:var(--g6); flex-shrink:0; }
+    .hero-actions { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+    .btn-primary {
+      display:inline-flex; align-items:center; gap:8px;
+      background: linear-gradient(135deg, var(--g6) 0%, var(--g7) 100%);
+      color:white; padding:14px 32px; border-radius:var(--r-sm);
+      font-size:15px; font-weight:800; letter-spacing:.02em;
+      box-shadow: var(--shadow-green); transition:all .25s;
     }
-    .job-th svg { width: 15px; height: 15px; color: var(--g6); flex-shrink: 0; margin-top: 2px; }
-    .job-td { padding: 20px 24px; font-size: 14px; color: var(--k6); line-height: 1.85; }
-    .job-td strong { display: block; font-size: 15px; font-weight: 700; color: var(--k9); margin-bottom: 4px; }
-    .job-td ul { list-style: none; padding: 0; }
-    .job-td ul li { padding-left: 14px; position: relative; }
-    .job-td ul li::before { content: '—'; position: absolute; left: 0; color: var(--g6); font-size: 11px; top: 5px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-    .tag {
-      background: var(--g1); color: var(--g8);
-      font-size: 12px; font-weight: 600; padding: 3px 10px;
-      border-radius: 4px; border: 1px solid var(--g2);
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(26,170,110,0.3); }
+    .btn-primary svg { width:17px; height:17px; }
+    .btn-outline {
+      display:inline-flex; align-items:center; gap:8px;
+      border:2px solid var(--line); color:var(--mid);
+      padding:13px 24px; border-radius:var(--r-sm);
+      font-size:14px; font-weight:600; transition:all .2s;
     }
-
-    /* ── REQUIREMENTS ── */
-    .req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
-    .req-card { background: var(--white); border: 1px solid var(--k2); border-radius: var(--radius-lg); padding: 28px; }
-    .req-card.primary { border-color: var(--g2); }
-    .req-head { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-    .req-badge {
-      font-size: 11px; font-weight: 700; padding: 3px 10px;
-      border-radius: 4px; letter-spacing: 0.05em;
+    .btn-outline:hover { border-color:var(--g4); color:var(--g6); }
+    .btn-outline svg { width:15px; height:15px; }
+    /* Hero image */
+    .hero-image-wrap {
+      position:relative;
+      animation: slideLeft .9s cubic-bezier(.22,1,.36,1) .15s both;
     }
-    .req-badge.required { background: var(--g6); color: white; }
-    .req-badge.welcome { background: var(--k1); color: var(--k6); border: 1px solid var(--k3); }
-    .req-head h3 { font-size: 15px; font-weight: 700; }
-    .req-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-    .req-list li { font-size: 14px; color: var(--k5); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
-    .req-list li svg { width: 15px; height: 15px; color: var(--g6); flex-shrink: 0; margin-top: 3px; }
-    .open-banner {
-      background: linear-gradient(135deg, var(--g1), #d0f5e6);
-      border: 1px solid var(--g2); border-radius: var(--radius-lg);
-      padding: 28px 32px; text-align: center;
-    }
-    .open-banner h3 { font-size: 18px; font-weight: 800; color: var(--g8); margin-bottom: 6px; }
-    .open-banner p { font-size: 13px; color: var(--k5); margin-bottom: 20px; }
-    .open-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-    .open-chip {
-      background: white; color: var(--g8);
-      font-size: 13px; font-weight: 600; padding: 7px 16px;
-      border-radius: 20px; border: 1.5px solid var(--g5);
-    }
-
-    /* ── LOCATION ── */
-    .loc-card { background: var(--white); border: 1px solid var(--k2); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
-    .loc-body { padding: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-    .loc-name { font-size: 18px; font-weight: 800; color: var(--k9); margin-bottom: 20px; }
-    .loc-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 13px; }
-    .loc-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--k5); line-height: 1.6; }
-    .loc-list li svg { width: 16px; height: 16px; color: var(--g6); flex-shrink: 0; margin-top: 2px; }
-    .loc-access-head { font-size: 12px; font-weight: 700; color: var(--k4); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-    .loc-access-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-    .loc-access-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--k6); }
-    .loc-access-item svg { width: 16px; height: 16px; color: var(--g6); flex-shrink: 0; }
-    .loc-map { height: 280px; }
-    .loc-map iframe { width: 100%; height: 100%; border: 0; display: block; }
-
-    /* ── FORM ── */
-    .form-sec { background: var(--k0); }
-    .form-wrap {
-      background: var(--white); border: 1px solid var(--k2);
-      border-radius: 16px; box-shadow: var(--shadow-lg);
+    .hero-image-frame {
+      border-radius: var(--r-xl);
       overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      aspect-ratio: 4/3;
+      background: var(--g1);
     }
-    .form-head {
-      background: var(--k9); padding: 36px 40px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    .hero-image-frame img {
+      width:100%; height:100%;
+      object-fit:cover; display:block;
+      transition: transform .6s cubic-bezier(.22,1,.36,1);
     }
-    .form-head .sec-eyebrow { color: var(--g5); }
-    .form-head .sec-eyebrow::after { background: var(--g5); }
-    .form-body { padding: 40px; }
-    .form-section-title {
-      font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--k4);
-      border-bottom: 1px solid var(--k2); padding-bottom: 10px;
-      margin-bottom: 24px; margin-top: 36px;
+    .hero-image-frame:hover img { transform:scale(1.03); }
+    /* Floating badges on image */
+    .hero-badge-float {
+      position:absolute;
+      background:white; border-radius:var(--r);
+      padding:10px 16px; box-shadow:var(--shadow-md);
+      display:flex; align-items:center; gap:8px;
+      font-size:13px; font-weight:700;
+      animation: float 4s ease-in-out infinite;
     }
-    .form-section-title:first-child { margin-top: 0; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-    .form-row.full { grid-template-columns: 1fr; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-label {
-      font-size: 13px; font-weight: 600; color: var(--k6);
-      display: flex; align-items: center; gap: 6px;
+    .hero-badge-float.b1 { bottom:24px; left:-20px; animation-delay:0s; }
+    .hero-badge-float.b2 { top:20px; right:-16px; animation-delay:2s; }
+    .hero-badge-float .badge-icon { width:32px; height:32px; border-radius:8px; background:var(--g1); display:flex; align-items:center; justify-content:center; color:var(--g6); }
+    .hero-badge-float .badge-icon svg { width:17px; height:17px; }
+    .hero-badge-float .badge-val { font-size:16px; color:var(--g6); }
+    .hero-badge-float .badge-label { font-size:11px; color:var(--muted); font-weight:500; }
+    /* Decorative dot grid */
+    .hero-dots {
+      position:absolute; bottom:-20px; left:-30px;
+      width:120px; height:120px;
+      background-image: radial-gradient(circle, var(--g3, var(--g2)) 1.5px, transparent 1.5px);
+      background-size: 18px 18px;
+      opacity:.5;
     }
-    .form-required {
-      font-size: 10px; background: var(--g6); color: white;
-      padding: 1px 6px; border-radius: 3px; font-weight: 700;
+
+    /* ─── URGENT STRIP ─── */
+    .urgent-strip {
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      border-top: 1px solid #fde68a; border-bottom: 1px solid #fde68a;
+      padding: 14px 36px;
+      display: flex; align-items:center; justify-content:center; gap:12px;
+      overflow:hidden; position:relative;
     }
-    .form-optional { font-size: 11px; color: var(--k4); }
+    .urgent-strip::before {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.3) 50%, transparent 100%);
+      background-size:200% 100%;
+      animation: shimmer 3s linear infinite;
+    }
+    .urgent-icon svg { width:20px; height:20px; color:var(--orange); }
+    .urgent-text { font-size:14px; color:#92400e; font-weight:600; }
+    .urgent-text strong { color:#b45309; }
+
+    /* ─── SECTIONS ─── */
+    .sec { padding:80px 36px; }
+    .sec-alt { background:var(--bg); }
+    .sec-green { background:var(--g0); }
+    .container { max-width:960px; margin:0 auto; }
+    .sec-hd { margin-bottom:48px; }
+    .sec-eyebrow {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:11px; font-weight:700; letter-spacing:.2em;
+      text-transform:uppercase; color:var(--g6); margin-bottom:10px;
+    }
+    .sec-eyebrow::before { content:''; width:24px; height:2px; background:var(--g6); border-radius:2px; flex-shrink:0; }
+    .sec-title { font-size:clamp(24px,3.5vw,36px); font-weight:800; line-height:1.25; letter-spacing:-.015em; color:var(--ink); }
+    .sec-sub { margin-top:12px; font-size:15px; color:var(--sub); max-width:540px; line-height:1.8; }
+
+    /* ─── APPEAL ─── */
+    .appeal-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .appeal-card {
+      background:var(--white); border:1px solid var(--line);
+      border-radius:var(--r-lg); padding:28px 24px;
+      position:relative; overflow:hidden;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      cursor:default;
+    }
+    .appeal-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:3px;
+      background: linear-gradient(90deg, var(--g6), var(--g5));
+      transform:scaleX(0); transform-origin:left;
+      transition: transform .35s cubic-bezier(.22,1,.36,1);
+    }
+    .appeal-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--g2); }
+    .appeal-card:hover::before { transform:scaleX(1); }
+    .appeal-num {
+      position:absolute; right:20px; top:16px;
+      font-size:44px; font-weight:900; color:var(--line2);
+      line-height:1; letter-spacing:-.03em;
+    }
+    .appeal-icon {
+      width:46px; height:46px; border-radius:12px;
+      background: linear-gradient(135deg, var(--g1), var(--g0));
+      display:flex; align-items:center; justify-content:center;
+      color:var(--g6); margin-bottom:18px;
+      box-shadow: 0 2px 8px rgba(26,170,110,0.15);
+      transition: transform .2s;
+    }
+    .appeal-card:hover .appeal-icon { transform:scale(1.08); }
+    .appeal-icon svg { width:22px; height:22px; }
+    .appeal-card h3 { font-size:15px; font-weight:700; margin-bottom:8px; line-height:1.4; color:var(--ink2); }
+    .appeal-card p { font-size:13px; color:var(--sub); line-height:1.8; }
+
+    /* ─── SALARY ─── */
+    .salary-layout { display:grid; grid-template-columns:3fr 2fr; gap:20px; }
+    .salary-main {
+      background:white; border:1px solid var(--line);
+      border-radius:var(--r-lg); padding:40px;
+      box-shadow:var(--shadow); position:relative; overflow:hidden;
+    }
+    .salary-main::after {
+      content:''; position:absolute; top:-40px; right:-40px;
+      width:200px; height:200px; border-radius:50%;
+      background:radial-gradient(circle, var(--g1) 0%, transparent 70%);
+    }
+    .salary-eyebrow {
+      font-size:11px; font-weight:700; letter-spacing:.15em;
+      text-transform:uppercase; color:var(--g6); margin-bottom:8px;
+      display:flex; align-items:center; gap:6px;
+    }
+    .salary-eyebrow svg { width:14px; height:14px; }
+    /* PRIMARY: コマ給 */
+    .salary-primary { margin-bottom:6px; }
+    .salary-primary-num {
+      font-size:clamp(48px,7vw,72px); font-weight:900;
+      color:var(--ink); line-height:1; letter-spacing:-.03em;
+    }
+    .salary-primary-num .unit { font-size:.38em; font-weight:700; color:var(--mid); letter-spacing:0; }
+    .salary-primary-label {
+      font-size:15px; font-weight:700; color:var(--g6); margin-top:4px;
+      display:flex; align-items:center; gap:6px;
+    }
+    .salary-primary-label svg { width:15px; height:15px; }
+    /* SECONDARY: 時給 */
+    .salary-secondary {
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top:14px; margin-bottom:28px;
+      background:var(--bg); border:1px solid var(--line);
+      border-radius:var(--r-sm); padding:8px 14px;
+    }
+    .salary-secondary-label { font-size:12px; color:var(--muted); font-weight:500; }
+    .salary-secondary-num { font-size:15px; font-weight:700; color:var(--mid); }
+    .salary-secondary-num .plus { font-size:11px; color:var(--g6); font-weight:700; margin-left:4px; }
+    /* Rows */
+    .salary-rows { display:flex; flex-direction:column; gap:12px; }
+    .salary-row { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--sub); line-height:1.7; }
+    .salary-row-icon { color:var(--g6); flex-shrink:0; margin-top:3px; }
+    .salary-row-icon svg { width:14px; height:14px; }
+    .salary-row strong { color:var(--ink2); font-weight:700; }
+    /* Side cards */
+    .salary-side { display:flex; flex-direction:column; gap:14px; }
+    .salary-side-card {
+      background:white; border:1px solid var(--line);
+      border-radius:var(--r); padding:20px;
+      box-shadow:var(--shadow-xs);
+      transition:transform .2s, box-shadow .2s;
+      flex:1;
+    }
+    .salary-side-card:hover { transform:translateY(-2px); box-shadow:var(--shadow); }
+    .salary-side-icon { color:var(--g6); margin-bottom:8px; }
+    .salary-side-icon svg { width:20px; height:20px; }
+    .salary-side-label { font-size:11px; color:var(--muted); font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:4px; }
+    .salary-side-val { font-size:16px; font-weight:800; color:var(--ink); }
+
+    /* ─── WORK STYLE ─── */
+    .ws-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:20px; }
+    .ws-card {
+      background:white; border:1px solid var(--line);
+      border-radius:var(--r); padding:22px 18px;
+      display:flex; flex-direction:column; gap:10px;
+      box-shadow:var(--shadow-xs);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .ws-card:hover { transform:translateY(-3px); box-shadow:var(--shadow); }
+    .ws-card-icon {
+      width:38px; height:38px; border-radius:10px;
+      background:var(--g1); display:flex; align-items:center; justify-content:center;
+      color:var(--g6);
+    }
+    .ws-card-icon svg { width:19px; height:19px; }
+    .ws-card-lbl { font-size:11px; color:var(--muted); font-weight:600; letter-spacing:.05em; }
+    .ws-card-val { font-size:16px; font-weight:700; color:var(--ink); }
+    .ws-card-note { font-size:12px; color:var(--g6); font-weight:600; }
+    .ws-examples {
+      background:white; border:1px solid var(--g2); border-radius:var(--r-lg);
+      padding:24px 28px; border-left:4px solid var(--g6);
+      box-shadow:var(--shadow-xs);
+    }
+    .ws-examples-title { font-size:13px; font-weight:700; color:var(--g8); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+    .ws-examples-title svg { width:15px; height:15px; }
+    .ws-ex-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+    .ws-ex { font-size:13px; color:var(--mid); display:flex; align-items:flex-start; gap:8px; line-height:1.6; }
+    .ws-ex svg { width:13px; height:13px; color:var(--g6); flex-shrink:0; margin-top:3px; }
+
+    /* ─── JOB TABLE ─── */
+    .job-table {
+      background:white; border:1px solid var(--line);
+      border-radius:var(--r-lg); overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .job-row { display:grid; grid-template-columns:156px 1fr; border-bottom:1px solid var(--line); }
+    .job-row:last-child { border-bottom:none; }
+    .job-th {
+      background:var(--g0); padding:18px 20px;
+      display:flex; align-items:flex-start; gap:8px;
+      font-size:13px; font-weight:700; color:var(--g7);
+    }
+    .job-th svg { width:15px; height:15px; color:var(--g6); flex-shrink:0; margin-top:2px; }
+    .job-td { padding:18px 24px; font-size:14px; color:var(--mid); line-height:1.85; }
+    .job-td strong { display:block; font-size:15px; font-weight:700; color:var(--ink); margin-bottom:4px; }
+    .job-td ul { list-style:none; padding:0; }
+    .job-td ul li { padding-left:14px; position:relative; }
+    .job-td ul li::before { content:'–'; position:absolute; left:0; color:var(--g5); }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:8px; }
+    .tag {
+      background:var(--g1); color:var(--g7);
+      font-size:12px; font-weight:600; padding:3px 10px;
+      border-radius:5px; border:1px solid var(--g2);
+    }
+
+    /* ─── REQUIREMENTS ─── */
+    .req-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:20px; }
+    .req-card { background:white; border:1px solid var(--line); border-radius:var(--r-lg); padding:28px; box-shadow:var(--shadow-xs); transition:box-shadow .2s; }
+    .req-card:hover { box-shadow:var(--shadow); }
+    .req-card.primary { border-color:var(--g2); background:var(--g0); }
+    .req-head { display:flex; align-items:center; gap:10px; margin-bottom:20px; }
+    .req-badge { font-size:11px; font-weight:700; padding:3px 10px; border-radius:5px; letter-spacing:.04em; }
+    .req-badge.required { background:var(--g6); color:white; }
+    .req-badge.welcome { background:var(--line2); color:var(--mid); border:1px solid var(--line); }
+    .req-head h3 { font-size:15px; font-weight:700; color:var(--ink); }
+    .req-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:12px; }
+    .req-list li { font-size:14px; color:var(--mid); display:flex; align-items:flex-start; gap:10px; line-height:1.65; }
+    .req-list li svg { width:15px; height:15px; color:var(--g6); flex-shrink:0; margin-top:3px; }
+    .open-banner {
+      background: linear-gradient(135deg, var(--g1), #d1fae5);
+      border:1px solid var(--g2); border-radius:var(--r-lg);
+      padding:28px 32px; text-align:center;
+    }
+    .open-banner h3 { font-size:18px; font-weight:800; color:var(--g8); margin-bottom:6px; }
+    .open-banner p { font-size:13px; color:var(--sub); margin-bottom:18px; }
+    .open-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+    .open-chip { background:white; color:var(--g8); font-size:13px; font-weight:600; padding:7px 16px; border-radius:20px; border:1.5px solid var(--g5); box-shadow:var(--shadow-xs); }
+
+    /* ─── LOCATION ─── */
+    .loc-card { background:white; border:1px solid var(--line); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow); }
+    .loc-body { padding:32px; display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+    .loc-name { font-size:18px; font-weight:800; color:var(--ink); margin-bottom:18px; }
+    .loc-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:12px; }
+    .loc-list li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--mid); line-height:1.6; }
+    .loc-list li svg { width:16px; height:16px; color:var(--g6); flex-shrink:0; margin-top:2px; }
+    .loc-access-head { font-size:11px; font-weight:700; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; }
+    .loc-access-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; }
+    .loc-access-item { display:flex; align-items:center; gap:10px; font-size:14px; color:var(--mid); }
+    .loc-access-item svg { width:16px; height:16px; color:var(--g6); flex-shrink:0; }
+    .loc-map { height:280px; }
+    .loc-map iframe { width:100%; height:100%; border:0; display:block; }
+
+    /* ─── FORM ─── */
+    .form-sec { background:var(--bg); }
+    .form-wrap { background:white; border:1px solid var(--line); border-radius:var(--r-xl); box-shadow:var(--shadow-lg); overflow:hidden; }
+    .form-hd {
+      background: linear-gradient(135deg, var(--g8) 0%, var(--g6) 100%);
+      padding:36px 44px; position:relative; overflow:hidden;
+    }
+    .form-hd::after {
+      content:''; position:absolute; right:-60px; top:-60px;
+      width:240px; height:240px; border-radius:50%;
+      background:rgba(255,255,255,.07);
+    }
+    .form-hd-eyebrow { font-size:11px; font-weight:700; letter-spacing:.18em; color:rgba(255,255,255,.6); margin-bottom:8px; text-transform:uppercase; }
+    .form-hd h2 { font-size:24px; font-weight:800; color:white; margin-bottom:6px; }
+    .form-hd p { font-size:13px; color:rgba(255,255,255,.65); line-height:1.6; }
+    .form-body { padding:40px 44px; }
+    .form-sec-title {
+      font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--muted); border-bottom:1px solid var(--line); padding-bottom:10px;
+      margin-bottom:22px; margin-top:34px;
+    }
+    .form-sec-title:first-child { margin-top:0; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+    .form-row.full { grid-template-columns:1fr; }
+    .form-group { display:flex; flex-direction:column; gap:6px; }
+    .form-label { font-size:13px; font-weight:600; color:var(--ink2); display:flex; align-items:center; gap:6px; }
+    .req-mark { font-size:10px; background:var(--g6); color:white; padding:1px 6px; border-radius:4px; font-weight:700; }
+    .opt-mark { font-size:11px; color:var(--muted); }
     .form-input, .form-select, .form-textarea {
-      width: 100%; padding: 11px 14px;
-      border: 1.5px solid var(--k2); border-radius: var(--radius);
-      font-size: 14px; font-family: inherit; color: var(--k9);
-      background: var(--white); transition: border-color .2s, box-shadow .2s;
-      outline: none; line-height: 1.5;
+      width:100%; padding:11px 14px;
+      border:1.5px solid var(--line); border-radius:var(--r-sm);
+      font-size:14px; font-family:inherit; color:var(--ink); background:white;
+      transition:border-color .2s, box-shadow .2s; outline:none; line-height:1.5;
     }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--k4); }
+    .form-input:hover, .form-select:hover { border-color:var(--muted); }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--muted); }
     .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--g6); box-shadow: 0 0 0 3px rgba(26,170,110,0.12);
+      border-color:var(--g6); box-shadow:0 0 0 3px rgba(26,170,110,.12);
     }
-    .form-input.error, .form-select.error, .form-textarea.error { border-color: #ef4444; }
-    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
-    .form-textarea { resize: vertical; min-height: 120px; }
-    .check-group { display: flex; flex-wrap: wrap; gap: 10px; }
-    .check-item { display: flex; align-items: center; gap: 7px; cursor: pointer; }
-    .check-item input[type="checkbox"], .check-item input[type="radio"] {
-      width: 16px; height: 16px; accent-color: var(--g6); cursor: pointer; flex-shrink: 0;
+    .form-input.error, .form-select.error, .form-textarea.error { border-color:var(--red); box-shadow:0 0 0 3px rgba(239,68,68,.1); }
+    .form-select {
+      appearance:none; cursor:pointer;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:right 12px center; padding-right:36px;
     }
-    .check-item span { font-size: 14px; color: var(--k6); }
-    .form-hint { font-size: 12px; color: var(--k4); margin-top: 4px; }
-    .form-error-msg { font-size: 12px; color: #ef4444; margin-top: 4px; display: none; }
+    .form-textarea { resize:vertical; min-height:120px; }
+    .check-group { display:flex; flex-wrap:wrap; gap:8px; }
+    .check-item { display:flex; align-items:center; gap:7px; cursor:pointer; }
+    .check-item input { width:16px; height:16px; accent-color:var(--g6); cursor:pointer; flex-shrink:0; }
+    .check-item span { font-size:14px; color:var(--mid); }
+    .form-hint { font-size:12px; color:var(--muted); margin-top:4px; }
+    .form-err-msg { font-size:12px; color:var(--red); margin-top:4px; display:none; }
     .form-agree {
-      background: var(--k0); border-radius: var(--radius);
-      padding: 16px 20px; margin: 28px 0;
-      display: flex; align-items: flex-start; gap: 12px;
+      background:var(--bg); border-radius:var(--r); padding:16px 20px;
+      margin:28px 0; display:flex; align-items:flex-start; gap:12px;
     }
-    .form-agree input { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--g6); flex-shrink: 0; cursor: pointer; }
-    .form-agree label { font-size: 13px; color: var(--k5); cursor: pointer; line-height: 1.6; }
-    .form-agree label a { color: var(--g6); text-decoration: underline; }
-    .form-submit-wrap { text-align: center; }
+    .form-agree input { margin-top:3px; width:16px; height:16px; accent-color:var(--g6); flex-shrink:0; cursor:pointer; }
+    .form-agree label { font-size:13px; color:var(--sub); cursor:pointer; line-height:1.65; }
+    .form-agree label a { color:var(--g6); text-decoration:underline; }
+    .form-submit-wrap { text-align:center; }
     .btn-submit {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      background: var(--g6); color: white; border: none; cursor: pointer;
-      padding: 16px 48px; border-radius: var(--radius);
-      font-size: 16px; font-weight: 800; font-family: inherit;
-      transition: all .2s; letter-spacing: 0.02em; min-width: 240px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      background: linear-gradient(135deg, var(--g6), var(--g7));
+      color:white; border:none; cursor:pointer;
+      padding:16px 52px; border-radius:var(--r-sm);
+      font-size:16px; font-weight:800; font-family:inherit;
+      transition:all .25s; letter-spacing:.02em; min-width:240px;
+      box-shadow:var(--shadow-green);
     }
-    .btn-submit:hover { background: var(--g5); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(26,170,110,0.35); }
-    .btn-submit:disabled { background: var(--k3); cursor: not-allowed; transform: none; box-shadow: none; }
-    .btn-submit svg { width: 18px; height: 18px; }
-    .submit-note { font-size: 12px; color: var(--k4); margin-top: 12px; }
-
-    /* Success / Error states */
-    .form-success {
-      display: none; text-align: center; padding: 60px 40px;
-    }
-    .form-success-icon {
-      width: 72px; height: 72px; background: var(--g1);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 24px; color: var(--g6);
-    }
-    .form-success-icon svg { width: 36px; height: 36px; }
-    .form-success h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
-    .form-success p { font-size: 15px; color: var(--k5); line-height: 1.8; }
+    .btn-submit:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 10px 40px rgba(26,170,110,.35); }
+    .btn-submit:disabled { background:var(--line); color:var(--muted); cursor:not-allowed; box-shadow:none; }
+    .btn-submit svg { width:18px; height:18px; }
+    .submit-note { font-size:12px; color:var(--muted); margin-top:12px; }
     .form-alert {
-      display: none; background: #fef2f2; border: 1px solid #fecaca;
-      border-radius: var(--radius); padding: 14px 18px;
-      font-size: 14px; color: #b91c1c; margin-bottom: 20px;
-      align-items: center; gap: 10px;
+      display:none; background:#fef2f2; border:1px solid #fecaca;
+      border-radius:var(--r-sm); padding:14px 18px; margin-bottom:20px;
+      font-size:14px; color:#b91c1c; align-items:center; gap:10px;
     }
-    .form-alert svg { width: 18px; height: 18px; flex-shrink: 0; }
-
-    /* spinner */
-    .spinner {
-      width: 18px; height: 18px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: white; border-radius: 50%;
-      animation: spin .7s linear infinite;
+    .form-alert svg { width:18px; height:18px; flex-shrink:0; }
+    /* Success */
+    .form-success { display:none; text-align:center; padding:64px 40px; }
+    .form-success-icon {
+      width:80px; height:80px; border-radius:50%;
+      background: linear-gradient(135deg, var(--g1), var(--g0));
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 24px; color:var(--g6);
+      box-shadow:0 4px 20px rgba(26,170,110,.2);
+      animation: scaleIn .5s cubic-bezier(.22,1,.36,1);
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+    .form-success-icon svg { width:40px; height:40px; }
+    .form-success h3 { font-size:22px; font-weight:800; margin-bottom:12px; animation: fadeUp .5s .1s both; }
+    .form-success p { font-size:15px; color:var(--sub); line-height:1.8; animation: fadeUp .5s .2s both; }
+    .spinner { width:18px; height:18px; border:2px solid rgba(255,255,255,.3); border-top-color:white; border-radius:50%; animation:spin .7s linear infinite; }
 
-    /* ── FOOTER ── */
-    footer { background: var(--k9); padding: 40px 32px; border-top: 1px solid rgba(255,255,255,0.06); }
-    .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-    .footer-logo { display: flex; align-items: center; gap: 10px; }
-    .footer-logo-mark { width: 28px; height: 28px; background: var(--g6); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-    .footer-logo-mark svg { width: 16px; height: 16px; color: white; }
-    .footer-logo-name { font-size: 14px; font-weight: 700; color: white; }
-    .footer-logo-name span { color: var(--g5); }
-    .footer-info { font-size: 13px; color: rgba(255,255,255,0.35); text-align: right; }
+    /* ─── FOOTER ─── */
+    footer { background:var(--ink2); padding:36px; border-top:none; }
+    .footer-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+    .footer-logo { display:flex; align-items:center; gap:10px; }
+    .footer-logo-mark { width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,var(--g6),var(--g5)); display:flex; align-items:center; justify-content:center; }
+    .footer-logo-mark svg { width:16px; height:16px; color:white; }
+    .footer-brand { display:flex; flex-direction:column; }
+    .footer-brand-main { font-size:14px; font-weight:800; color:white; }
+    .footer-brand-main span { color:var(--g5); }
+    .footer-brand-sub { font-size:11px; color:rgba(255,255,255,.35); font-weight:500; }
+    .footer-info { font-size:12px; color:rgba(255,255,255,.3); text-align:right; line-height:1.8; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .hdr { padding: 0 16px; }
-      .hdr-nav { display: none; }
-      .sec { padding: 56px 16px; }
-      .hero { padding: 72px 16px 80px; }
-      .urgent-wrap { padding: 0 16px 40px; }
-      .appeal-grid { grid-template-columns: 1fr; }
-      .salary-layout { grid-template-columns: 1fr; }
-      .ws-grid { grid-template-columns: 1fr 1fr; }
-      .ws-example-grid { grid-template-columns: 1fr; }
-      .job-row { grid-template-columns: 1fr; }
-      .job-th { border-bottom: 1px solid var(--k2); }
-      .req-grid { grid-template-columns: 1fr; }
-      .loc-body { grid-template-columns: 1fr; gap: 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .form-body { padding: 24px; }
-      .form-head { padding: 28px 24px; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-info { text-align: center; }
+    /* ─── RESPONSIVE ─── */
+    @media (max-width:860px) {
+      .hdr { padding:0 20px; }
+      .hdr-nav { display:none; }
+      .sec { padding:56px 20px; }
+      .hero { padding:56px 20px 72px; }
+      .hero-inner { grid-template-columns:1fr; gap:40px; }
+      .hero-image-wrap { order:-1; }
+      .hero-badge-float.b1 { left:10px; }
+      .hero-badge-float.b2 { right:10px; }
+      .appeal-grid { grid-template-columns:1fr 1fr; }
+      .salary-layout { grid-template-columns:1fr; }
+      .ws-grid { grid-template-columns:1fr 1fr; }
+      .ws-ex-grid { grid-template-columns:1fr; }
+      .job-row { grid-template-columns:1fr; }
+      .job-th { border-bottom:1px solid var(--line); }
+      .req-grid { grid-template-columns:1fr; }
+      .loc-body { grid-template-columns:1fr; gap:24px; }
+      .form-row { grid-template-columns:1fr; }
+      .form-body { padding:24px; }
+      .form-hd { padding:28px 24px; }
+      .footer-inner { flex-direction:column; text-align:center; }
+      .footer-info { text-align:center; }
     }
-    @media (max-width: 480px) {
-      .ws-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 28px; }
+    @media (max-width:540px) {
+      .appeal-grid { grid-template-columns:1fr; }
+      .ws-grid { grid-template-columns:1fr; }
+      .hero h1 { font-size:28px; }
+      .urgent-strip { flex-direction:column; gap:4px; text-align:center; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ SVG DEFS ═══════════════════════════════ -->
+<!-- ══════════ SVG SPRITE ══════════ -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
   <symbol id="ico-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
   </symbol>
-  <symbol id="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <symbol id="ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
     <polyline points="20 6 9 17 4 12"/>
   </symbol>
   <symbol id="ico-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -473,7 +609,7 @@
     <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
   </symbol>
   <symbol id="ico-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+    <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
   </symbol>
   <symbol id="ico-yen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <line x1="12" y1="14" x2="12" y2="21"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="13" x2="16" y2="13"/><path d="M4 4l8 9 8-9"/>
@@ -517,11 +653,8 @@
   <symbol id="ico-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
   </symbol>
-  <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-  </symbol>
   <symbol id="ico-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="2" y1="13" x2="22" y2="13"/>
+    <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><line x1="2" y1="13" x2="22" y2="13"/>
   </symbol>
   <symbol id="ico-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
@@ -530,7 +663,7 @@
     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
   </symbol>
   <symbol id="ico-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/>
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/>
   </symbol>
   <symbol id="ico-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
@@ -538,15 +671,19 @@
   <symbol id="ico-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
     <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
   </symbol>
+  <symbol id="ico-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+  </symbol>
 </svg>
 
-<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
-<header class="hdr">
+<!-- ══════════ HEADER ══════════ -->
+<header class="hdr" id="hdr">
   <div class="hdr-logo">
-    <div class="hdr-logo-mark">
-      <svg><use href="#ico-book"/></svg>
+    <div class="hdr-logo-mark"><svg><use href="#ico-book"/></svg></div>
+    <div class="hdr-brand">
+      <div class="hdr-brand-main">MANABIYA <span>B</span>ースタディ</div>
+      <div class="hdr-brand-sub">運営：beducate（ベデュケイト）</div>
     </div>
-    <span class="hdr-logo-name">MANABIYA <span>B</span>ースタディ</span>
   </div>
   <nav class="hdr-nav">
     <a href="#appeal">魅力</a>
@@ -558,243 +695,274 @@
   <a href="#apply" class="hdr-cta">今すぐ応募 →</a>
 </header>
 
-<!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+<!-- ══════════ HERO ══════════ -->
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
+  <div class="hero-bg-circle c1"></div>
+  <div class="hero-bg-circle c2"></div>
   <div class="hero-inner">
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-dot"></span>
-      鳥取県倉吉市 ／ 塾講師 採用情報
+    <!-- Text -->
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        鳥取県倉吉市 ／ 塾講師 採用情報
+      </div>
+      <h1>
+        子どもの<span class="accent">成長</span>が、<br>
+        あなたの<span class="underline">やりがい</span>になる。
+      </h1>
+      <p class="hero-lead">
+        得意科目を活かして、生徒と真摯に向き合う個別指導塾。<br>
+        週1日・1コマからスタートできる、柔軟な働き方。
+      </p>
+      <div class="hero-chips">
+        <span class="hero-chip">
+          <svg><use href="#ico-calendar"/></svg>週1日・1コマからOK
+        </span>
+        <span class="hero-chip">
+          <svg><use href="#ico-yen"/></svg>コマ給1,500円〜
+        </span>
+        <span class="hero-chip">
+          <svg><use href="#ico-users"/></svg>未経験・既卒 歓迎
+        </span>
+        <span class="hero-chip">
+          <svg><use href="#ico-briefcase"/></svg>副業・Wワーク可
+        </span>
+        <span class="hero-chip">
+          <svg><use href="#ico-car"/></svg>駐車場あり・転勤なし
+        </span>
+      </div>
+      <div class="hero-actions">
+        <a href="#apply" class="btn-primary">
+          <svg><use href="#ico-pencil"/></svg>
+          応募フォームへ
+        </a>
+        <a href="#details" class="btn-outline">
+          <svg><use href="#ico-chevron-down"/></svg>
+          募集要項を確認
+        </a>
+      </div>
     </div>
-    <h1>
-      子どもの成長が、<br>
-      あなたの<span class="accent">やりがい</span>になる。
-    </h1>
-    <p class="hero-lead">
-      得意科目を活かして、生徒と真摯に向き合う個別指導塾。<br>
-      週1日・1コマからスタートできる、柔軟な働き方。
-    </p>
-    <div class="hero-chips">
-      <span class="chip">
-        <svg width="14" height="14"><use href="#ico-calendar"/></svg>
-        週1日・1コマからOK
-      </span>
-      <span class="chip">
-        <svg width="14" height="14"><use href="#ico-yen"/></svg>
-        時給1,100円〜＋コマ給
-      </span>
-      <span class="chip">
-        <svg width="14" height="14"><use href="#ico-users"/></svg>
-        未経験・既卒 歓迎
-      </span>
-      <span class="chip">
-        <svg width="14" height="14"><use href="#ico-briefcase"/></svg>
-        副業・Wワーク可
-      </span>
-      <span class="chip">
-        <svg width="14" height="14"><use href="#ico-car"/></svg>
-        駐車場あり・転勤なし
-      </span>
-    </div>
-    <div class="hero-actions">
-      <a href="#apply" class="btn-hero">
-        <svg><use href="#ico-pencil"/></svg>
-        応募フォームへ
-      </a>
-      <a href="#details" class="btn-ghost">
-        <svg><use href="#ico-chevron-down"/></svg>
-        募集要項を確認する
-      </a>
+    <!-- Image -->
+    <div class="hero-image-wrap reveal-right">
+      <div class="hero-image-frame">
+        <img src="images/hero.jpg" alt="MANABIYA Bースタディ 講師と生徒の授業風景" loading="eager">
+      </div>
+      <div class="hero-dots"></div>
+      <div class="hero-badge-float b1">
+        <div class="badge-icon"><svg><use href="#ico-yen"/></svg></div>
+        <div>
+          <div class="badge-val">1,500円〜</div>
+          <div class="badge-label">1コマ（80分）</div>
+        </div>
+      </div>
+      <div class="hero-badge-float b2">
+        <div class="badge-icon"><svg><use href="#ico-calendar"/></svg></div>
+        <div>
+          <div class="badge-val">週1日〜OK</div>
+          <div class="badge-label">柔軟なシフト</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ URGENT ═══════════════════════════════ -->
-<div class="urgent-wrap">
-  <div class="urgent">
-    <span class="urgent-icon"><svg width="22" height="22"><use href="#ico-lightning"/></svg></span>
-    <div class="urgent-body">
-      <strong>【急募】生徒数増加につき、新規講師を緊急募集しています。</strong>
-      内定まで最短2週間以内を予定。お早めにご応募ください。
-    </div>
-  </div>
+<!-- ══════════ URGENT ══════════ -->
+<div class="urgent-strip">
+  <span class="urgent-icon"><svg><use href="#ico-lightning"/></svg></span>
+  <p class="urgent-text">
+    <strong>【急募】生徒数増加につき新規講師を緊急募集中！</strong>
+    内定まで最短2週間以内を予定。お早めにご応募ください。
+  </p>
 </div>
 
-<!-- ═══════════════════════════════ APPEAL ═══════════════════════════════ -->
+<!-- ══════════ APPEAL ══════════ -->
 <section class="sec" id="appeal">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-hd reveal">
       <div class="sec-eyebrow">Why MANABIYA</div>
       <h2 class="sec-title">MANABIYAで働く、6つの理由</h2>
-      <p class="sec-sub">多くの講師が長く続けられる理由があります。あなたの専門性と生活スタイルを最大限に活かせる環境です。</p>
+      <p class="sec-sub">多くの講師が長く続けられる理由があります。専門性とライフスタイルを最大限に活かせる環境です。</p>
     </div>
     <div class="appeal-grid">
-      <div class="appeal-card" data-num="01">
+      <div class="appeal-card reveal delay-1">
+        <div class="appeal-num">01</div>
         <div class="appeal-icon"><svg><use href="#ico-star"/></svg></div>
         <h3>得意科目だけを担当できる</h3>
-        <p>国語・数学・英語・理科・社会から自分の得意科目を選択して担当。専門性を活かして、自信を持って指導できます。</p>
+        <p>国語・数学・英語・理科・社会から得意科目を選択。専門性を活かして自信を持って指導できます。</p>
       </div>
-      <div class="appeal-card" data-num="02">
+      <div class="appeal-card reveal delay-2">
+        <div class="appeal-num">02</div>
         <div class="appeal-icon"><svg><use href="#ico-user"/></svg></div>
-        <h3>担当制で生徒と深く関われる</h3>
-        <p>担当制を採用しているため、特定の生徒を継続的に指導。成長を長期的に見守り、信頼関係を育てられます。</p>
+        <h3>担当制で生徒と深く関わる</h3>
+        <p>担当制で特定の生徒を継続指導。成長を長期的に見守り、信頼関係を育てられます。</p>
       </div>
-      <div class="appeal-card" data-num="03">
+      <div class="appeal-card reveal delay-3">
+        <div class="appeal-num">03</div>
         <div class="appeal-icon"><svg><use href="#ico-pencil"/></svg></div>
         <h3>教材準備・採点は最小限</h3>
-        <p>専用システムで指導報告書は簡単入力。教材準備や採点業務は極力抑えられており、純粋な指導に集中できます。</p>
+        <p>専用システムで報告書は簡単入力。教材準備・採点業務を最小化し、指導に専念できます。</p>
       </div>
-      <div class="appeal-card" data-num="04">
+      <div class="appeal-card reveal delay-4">
+        <div class="appeal-num">04</div>
         <div class="appeal-icon"><svg><use href="#ico-clock"/></svg></div>
         <h3>週1日・1コマから働ける</h3>
-        <p>残業は一切なし。平日夕方や土日を中心とした勤務で、学業・本業・家庭と無理なく両立できます。</p>
+        <p>残業は一切なし。平日夕方や土日中心の勤務で、学業・本業・家庭と無理なく両立できます。</p>
       </div>
-      <div class="appeal-card" data-num="05">
+      <div class="appeal-card reveal delay-5">
+        <div class="appeal-num">05</div>
         <div class="appeal-icon"><svg><use href="#ico-laptop"/></svg></div>
         <h3>ICTツールで最先端の教育</h3>
-        <p>ICTサポートシステム「manabo」を導入。生徒の自学力を高める、新しいスタイルの個別指導が体験できます。</p>
+        <p>ICTサポートシステム「manabo」を導入。生徒の自学力を高める、新しい個別指導を体験できます。</p>
       </div>
-      <div class="appeal-card" data-num="06">
+      <div class="appeal-card reveal delay-6">
+        <div class="appeal-num">06</div>
         <div class="appeal-icon"><svg><use href="#ico-briefcase"/></svg></div>
         <h3>副業・Wワーク全面対応</h3>
-        <p>平日夕方〜夜・土日中心の勤務設計なので、本業や他のアルバイトとのダブルワークも問題ありません。</p>
+        <p>平日夕方〜夜・土日中心の勤務設計で、本業や他のアルバイトとのダブルワークも問題なし。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ SALARY ═══════════════════════════════ -->
-<section class="sec sec-dark" id="salary">
+<!-- ══════════ SALARY ══════════ -->
+<section class="sec sec-green" id="salary">
   <div class="container">
-    <div class="sec-header">
-      <div class="sec-eyebrow" style="color:var(--g5)">Salary</div>
-      <h2 class="sec-title sec-title-light">給与・報酬体系</h2>
-      <p class="sec-sub sec-sub-light">指導時間には授業コマ給が加算されるので、実質的な時給は高水準です。</p>
+    <div class="sec-hd reveal">
+      <div class="sec-eyebrow">Salary</div>
+      <h2 class="sec-title">給与・報酬体系</h2>
+      <p class="sec-sub">授業コマ給がしっかり加算されるので、実質的な収入は高水準です。</p>
     </div>
     <div class="salary-layout">
-      <div class="salary-main">
-        <div class="salary-label">基本時給</div>
-        <div class="salary-num">1,100<sub>円〜 / 時間</sub></div>
-        <div class="salary-note">＋ 授業コマ給（1コマ80分あたり 1,500円〜）が別途支給</div>
+      <!-- Main salary card -->
+      <div class="salary-main reveal-left">
+        <div class="salary-eyebrow">
+          <svg><use href="#ico-yen"/></svg>
+          授業コマ給（メイン収入）
+        </div>
+        <!-- PRIMARY -->
+        <div class="salary-primary">
+          <div class="salary-primary-num" id="salaryCount">1,500<span class="unit">円〜 / コマ（80分）</span></div>
+          <div class="salary-primary-label">
+            <svg><use href="#ico-star"/></svg>
+            1コマ（80分）ごとに加算されるコマ給
+          </div>
+        </div>
+        <!-- SECONDARY -->
+        <div class="salary-secondary">
+          <span class="salary-secondary-label">別途 時給</span>
+          <span class="salary-secondary-num">1,100円〜<span class="plus">（指導外業務）</span></span>
+        </div>
         <div class="salary-rows">
           <div class="salary-row">
             <span class="salary-row-icon"><svg><use href="#ico-check"/></svg></span>
-            <span>コマ給：<strong>1コマ（80分）あたり1,500円〜。</strong>授業中の収入は別途加算されます。</span>
+            <span>報告書作成・質問対応などの指導外業務も<strong>時給制で全額支給</strong>。無給作業はゼロ。</span>
           </div>
           <div class="salary-row">
             <span class="salary-row-icon"><svg><use href="#ico-check"/></svg></span>
-            <span>報告書作成・質問対応などの指導外業務も<strong>時給制で全額支給。</strong>無給作業はありません。</span>
+            <span>経験・能力に応じた<strong>昇給制度あり</strong>。頑張りをきちんと評価します。</span>
           </div>
           <div class="salary-row">
             <span class="salary-row-icon"><svg><use href="#ico-check"/></svg></span>
-            <span>経験・能力に応じた<strong>昇給制度あり。</strong>頑張りがきちんと評価されます。</span>
+            <span>試用期間（1ヶ月）も<strong>本採用と同一給与</strong>。不利な期間はありません。</span>
           </div>
           <div class="salary-row">
             <span class="salary-row-icon"><svg><use href="#ico-check"/></svg></span>
-            <span>試用期間（1ヶ月）も<strong>本採用と同一条件。</strong>不利になる期間はありません。</span>
+            <span><strong>交通費全額支給</strong>。通勤コストの心配不要。</span>
           </div>
         </div>
       </div>
-      <div class="salary-side">
-        <div class="salary-card">
-          <span class="salary-card-icon"><svg><use href="#ico-yen"/></svg></span>
-          <div class="salary-card-title">時給レンジ</div>
-          <div class="salary-card-value">1,100円 〜 1,700円</div>
+      <!-- Side cards -->
+      <div class="salary-side reveal-right">
+        <div class="salary-side-card">
+          <div class="salary-side-icon"><svg><use href="#ico-yen"/></svg></div>
+          <div class="salary-side-label">時給レンジ</div>
+          <div class="salary-side-val">1,100円 〜 1,700円</div>
         </div>
-        <div class="salary-card">
-          <span class="salary-card-icon"><svg><use href="#ico-trending"/></svg></span>
-          <div class="salary-card-title">昇給</div>
-          <div class="salary-card-value">経験・実績に応じて随時</div>
+        <div class="salary-side-card">
+          <div class="salary-side-icon"><svg><use href="#ico-trending"/></svg></div>
+          <div class="salary-side-label">昇給</div>
+          <div class="salary-side-val">経験・実績に応じて随時</div>
         </div>
-        <div class="salary-card">
-          <span class="salary-card-icon"><svg><use href="#ico-car"/></svg></span>
-          <div class="salary-card-title">交通費</div>
-          <div class="salary-card-value">全額支給</div>
+        <div class="salary-side-card">
+          <div class="salary-side-icon"><svg><use href="#ico-car"/></svg></div>
+          <div class="salary-side-label">交通費</div>
+          <div class="salary-side-val">全額支給</div>
         </div>
-        <div class="salary-card">
-          <span class="salary-card-icon"><svg><use href="#ico-shield"/></svg></span>
-          <div class="salary-card-title">保険</div>
-          <div class="salary-card-value">労災保険 完備</div>
+        <div class="salary-side-card">
+          <div class="salary-side-icon"><svg><use href="#ico-shield"/></svg></div>
+          <div class="salary-side-label">保険</div>
+          <div class="salary-side-val">労災保険 完備</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ WORK STYLE ═══════════════════════════════ -->
-<section class="sec sec-alt">
+<!-- ══════════ WORK STYLE ══════════ -->
+<section class="sec">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-hd reveal">
       <div class="sec-eyebrow">Work Style</div>
       <h2 class="sec-title">柔軟な勤務スタイル</h2>
       <p class="sec-sub">あなたのライフスタイルに合わせて、無理なく長く働ける環境を整えています。</p>
     </div>
     <div class="ws-grid">
-      <div class="ws-card">
-        <span class="ws-card-icon"><svg><use href="#ico-calendar"/></svg></span>
-        <div class="ws-card-label">最低勤務日数</div>
-        <div class="ws-card-value">週1日から</div>
+      <div class="ws-card reveal delay-1">
+        <div class="ws-card-icon"><svg><use href="#ico-calendar"/></svg></div>
+        <div class="ws-card-lbl">最低勤務日数</div>
+        <div class="ws-card-val">週1日から</div>
       </div>
-      <div class="ws-card">
-        <span class="ws-card-icon"><svg><use href="#ico-clock"/></svg></span>
-        <div class="ws-card-label">最低勤務時間</div>
-        <div class="ws-card-value">1コマ（80分）〜</div>
+      <div class="ws-card reveal delay-2">
+        <div class="ws-card-icon"><svg><use href="#ico-clock"/></svg></div>
+        <div class="ws-card-lbl">最低勤務時間</div>
+        <div class="ws-card-val">1コマ（80分）〜</div>
       </div>
-      <div class="ws-card">
-        <span class="ws-card-icon"><svg><use href="#ico-clock"/></svg></span>
-        <div class="ws-card-label">平日勤務時間帯</div>
-        <div class="ws-card-value">16:00 〜 22:00</div>
+      <div class="ws-card reveal delay-3">
+        <div class="ws-card-icon"><svg><use href="#ico-clock"/></svg></div>
+        <div class="ws-card-lbl">平日</div>
+        <div class="ws-card-val">16:00 〜 22:00</div>
       </div>
-      <div class="ws-card">
-        <span class="ws-card-icon"><svg><use href="#ico-clock"/></svg></span>
-        <div class="ws-card-label">土日祝勤務時間帯</div>
-        <div class="ws-card-value">10:00 〜 22:00</div>
+      <div class="ws-card reveal delay-4">
+        <div class="ws-card-icon"><svg><use href="#ico-clock"/></svg></div>
+        <div class="ws-card-lbl">土日祝</div>
+        <div class="ws-card-val">10:00 〜 22:00</div>
       </div>
-      <div class="ws-card">
-        <span class="ws-card-icon"><svg><use href="#ico-shield"/></svg></span>
-        <div class="ws-card-label">残業</div>
-        <div class="ws-card-value">一切なし</div>
+      <div class="ws-card reveal delay-5">
+        <div class="ws-card-icon"><svg><use href="#ico-shield"/></svg></div>
+        <div class="ws-card-lbl">残業</div>
+        <div class="ws-card-val">一切なし</div>
+        <div class="ws-card-note">朝10時以降スタート</div>
       </div>
-      <div class="ws-card">
-        <span class="ws-card-icon"><svg><use href="#ico-gift"/></svg></span>
-        <div class="ws-card-label">有給休暇</div>
-        <div class="ws-card-value">法定通り付与</div>
+      <div class="ws-card reveal delay-6">
+        <div class="ws-card-icon"><svg><use href="#ico-gift"/></svg></div>
+        <div class="ws-card-lbl">有給休暇</div>
+        <div class="ws-card-val">法定通り付与</div>
+        <div class="ws-card-note">柔軟に調整可</div>
       </div>
     </div>
-    <div class="ws-examples">
-      <div class="ws-examples-title">こんな働き方ができます（例）</div>
-      <div class="ws-example-grid">
-        <div class="ws-example">
-          <svg><use href="#ico-arrow-right"/></svg>
-          <span><strong>平日夜のみ</strong>：19:00〜22:00（仕事帰りにWワーク）</span>
-        </div>
-        <div class="ws-example">
-          <svg><use href="#ico-arrow-right"/></svg>
-          <span><strong>土日のみ</strong>：13:00〜18:30（午後をフル活用）</span>
-        </div>
-        <div class="ws-example">
-          <svg><use href="#ico-arrow-right"/></svg>
-          <span><strong>週1・短時間</strong>：土曜1コマだけ（無理なくスタート）</span>
-        </div>
-        <div class="ws-example">
-          <svg><use href="#ico-arrow-right"/></svg>
-          <span><strong>がっつり稼ぐ</strong>：土曜 10:00〜18:30（しっかり稼ぎたい方）</span>
-        </div>
+    <div class="ws-examples reveal">
+      <div class="ws-examples-title">
+        <svg><use href="#ico-lightbulb"/></svg>
+        こんな働き方ができます（例）
+      </div>
+      <div class="ws-ex-grid">
+        <div class="ws-ex"><svg><use href="#ico-arrow-right"/></svg><span><strong>平日夜のみ</strong>：19:00〜22:00（仕事帰りにWワーク）</span></div>
+        <div class="ws-ex"><svg><use href="#ico-arrow-right"/></svg><span><strong>土日のみ</strong>：13:00〜18:30（午後をフル活用）</span></div>
+        <div class="ws-ex"><svg><use href="#ico-arrow-right"/></svg><span><strong>週1・短時間</strong>：土曜1コマだけ（無理なくスタート）</span></div>
+        <div class="ws-ex"><svg><use href="#ico-arrow-right"/></svg><span><strong>がっつり稼ぐ</strong>：土曜 10:00〜18:30（しっかり稼ぎたい方）</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ JOB DETAILS ═══════════════════════════════ -->
-<section class="sec" id="details">
+<!-- ══════════ JOB DETAILS ══════════ -->
+<section class="sec sec-alt" id="details">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-hd reveal">
       <div class="sec-eyebrow">Job Details</div>
       <h2 class="sec-title">募集要項</h2>
     </div>
-    <div class="job-table">
+    <div class="job-table reveal">
       <div class="job-row">
         <div class="job-th"><svg><use href="#ico-briefcase"/></svg>職種</div>
         <div class="job-td"><strong>塾講師（個別指導）</strong>小・中・高校生を対象とした1対2形式の個別指導</div>
@@ -815,16 +983,16 @@
         <div class="job-td">
           <strong>アルバイト・パート</strong>
           契約期間：6ヶ月ごと（更新は3月・9月）<br>
-          試用期間：1ヶ月（本採用と同一給与）
+          試用期間：1ヶ月（本採用と同一給与条件）
         </div>
       </div>
       <div class="job-row">
         <div class="job-th"><svg><use href="#ico-yen"/></svg>給与</div>
         <div class="job-td">
-          <strong>時給 1,100円〜1,700円</strong>
+          <strong>コマ給 1,500円〜 ／ 時給 1,100円〜1,700円</strong>
           授業コマ給：1コマ（80分）あたり1,500円〜<br>
-          指導外業務（報告書・質問対応）は時給制にて支給<br>
-          交通費全額支給 ／ 昇給あり
+          指導外業務（報告書・質問対応）は時給制にて全額支給<br>
+          交通費全額支給 ／ 経験・能力に応じて昇給あり
         </div>
       </div>
       <div class="job-row">
@@ -862,16 +1030,16 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════ REQUIREMENTS ═══════════════════════════════ -->
-<section class="sec sec-alt" id="requirements">
+<!-- ══════════ REQUIREMENTS ══════════ -->
+<section class="sec" id="requirements">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-hd reveal">
       <div class="sec-eyebrow">Requirements</div>
       <h2 class="sec-title">応募資格・求める人材</h2>
-      <p class="sec-sub">学歴・指導経験は不問です。「教えることが好き」という気持ちを最も大切にしています。</p>
+      <p class="sec-sub">学歴・指導経験は不問。「教えることが好き」という気持ちを最も大切にしています。</p>
     </div>
     <div class="req-grid">
-      <div class="req-card primary">
+      <div class="req-card primary reveal-left">
         <div class="req-head">
           <span class="req-badge required">必須要件</span>
           <h3>こんな方を求めています</h3>
@@ -879,23 +1047,23 @@
         <ul class="req-list">
           <li><svg><use href="#ico-check"/></svg>生徒・保護者と前向きにコミュニケーションが取れる方</li>
           <li><svg><use href="#ico-check"/></svg>人に教えること、生徒の成長を支えることにやりがいを感じる方</li>
-          <li><svg><use href="#ico-check"/></svg>柔軟に物事に対応でき、チームで協力して仕事ができる方</li>
+          <li><svg><use href="#ico-check"/></svg>柔軟に対応でき、チームで協力して仕事ができる方</li>
         </ul>
       </div>
-      <div class="req-card">
+      <div class="req-card reveal-right">
         <div class="req-head">
           <span class="req-badge welcome">歓迎要件</span>
           <h3>あれば尚良し</h3>
         </div>
         <ul class="req-list">
           <li><svg><use href="#ico-star"/></svg>個別指導塾・集団塾・学校などでの指導経験がある方</li>
-          <li><svg><use href="#ico-star"/></svg>家庭教師・教員など教育業界のご経験がある方</li>
+          <li><svg><use href="#ico-star"/></svg>家庭教師・教員など教育業界の経験がある方</li>
           <li><svg><use href="#ico-star"/></svg>長期的に安定して勤務できる方</li>
           <li><svg><use href="#ico-star"/></svg>社会人経験・専門知識を教育に活かしたい方</li>
         </ul>
       </div>
     </div>
-    <div class="open-banner">
+    <div class="open-banner reveal">
       <h3>こんな方も大歓迎です</h3>
       <p>経験・学歴・資格よりも「やる気」と「人柄」を重視しています。</p>
       <div class="open-chips">
@@ -910,17 +1078,17 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════ LOCATION ═══════════════════════════════ -->
-<section class="sec">
+<!-- ══════════ LOCATION ══════════ -->
+<section class="sec sec-alt">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-hd reveal">
       <div class="sec-eyebrow">Location</div>
       <h2 class="sec-title">勤務地・アクセス</h2>
     </div>
-    <div class="loc-card">
+    <div class="loc-card reveal">
       <div class="loc-body">
         <div>
-          <div class="loc-name">MANABIYA Bースタディ</div>
+          <div class="loc-name">📍 MANABIYA Bースタディ</div>
           <ul class="loc-list">
             <li><svg><use href="#ico-pin"/></svg>〒682-0016　鳥取県倉吉市海田西町2丁目95</li>
             <li><svg><use href="#ico-star"/></svg>「人形のはなふさ」隣・「倉吉スシロー」の目の前で分かりやすい立地</li>
@@ -938,184 +1106,151 @@
         </div>
       </div>
       <div class="loc-map">
-        <iframe
-          src="https://maps.google.co.jp/maps?q=鳥取県倉吉市海田西町2丁目95&output=embed&hl=ja&z=15"
-          allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="MANABIYA Bースタディ アクセスマップ">
-        </iframe>
+        <iframe src="https://maps.google.co.jp/maps?q=鳥取県倉吉市海田西町2丁目95&output=embed&hl=ja&z=15"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="MANABIYA Bースタディ アクセスマップ"></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ FORM ═══════════════════════════════ -->
+<!-- ══════════ FORM ══════════ -->
 <section class="sec form-sec" id="apply">
   <div class="container">
-    <div class="sec-header">
+    <div class="sec-hd reveal">
       <div class="sec-eyebrow">Apply</div>
       <h2 class="sec-title">応募フォーム</h2>
       <p class="sec-sub">必要事項をご記入のうえ、送信してください。2〜3営業日以内にご連絡いたします。</p>
     </div>
-    <div class="form-wrap">
-      <div class="form-head">
-        <div class="sec-eyebrow" style="color:var(--g5)">Application Form</div>
-        <h2 class="sec-title sec-title-light" style="font-size:24px;">講師応募フォーム</h2>
-        <p style="font-size:14px; color:rgba(255,255,255,0.5); margin-top:8px;">応募後、確認メールが自動送信されます。また当塾担当者より折り返しご連絡いたします。</p>
+    <div class="form-wrap reveal">
+      <div class="form-hd">
+        <div class="form-hd-eyebrow">Application Form</div>
+        <h2>講師応募フォーム</h2>
+        <p>応募後、確認メールが自動送信されます。また当塾担当者よりご連絡いたします。</p>
       </div>
 
-      <!-- SUCCESS STATE -->
+      <!-- SUCCESS -->
       <div class="form-success" id="formSuccess">
-        <div class="form-success-icon">
-          <svg><use href="#ico-check-circle"/></svg>
-        </div>
+        <div class="form-success-icon"><svg><use href="#ico-check-circle"/></svg></div>
         <h3>ご応募ありがとうございます！</h3>
         <p>
-          ご入力いただいたメールアドレスに<br>
-          確認メールをお送りしました。<br><br>
+          ご入力いただいたメールアドレスに確認メールをお送りしました。<br><br>
           担当者より2〜3営業日以内にご連絡いたします。<br>
-          ご不明な点は <strong>manabiya.b-study@outlook.jp</strong> までお問い合わせください。
+          ご不明な点は <strong>manabiya.b-study@outlook.jp</strong> までご連絡ください。
         </p>
       </div>
 
-      <!-- FORM BODY -->
+      <!-- FORM -->
       <div class="form-body" id="formBody">
         <div class="form-alert" id="formAlert">
           <svg><use href="#ico-alert"/></svg>
-          <span id="formAlertMsg">送信に失敗しました。お手数ですが、直接メールにてお問い合わせください。</span>
+          <span id="formAlertMsg">送信に失敗しました。manabiya.b-study@outlook.jp まで直接ご連絡ください。</span>
         </div>
-
         <form id="applyForm" novalidate>
-          <!-- 基本情報 -->
-          <div class="form-section-title">基本情報</div>
+
+          <div class="form-sec-title">基本情報</div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="name">
-                お名前 <span class="form-required">必須</span>
-              </label>
+              <label class="form-label" for="name">お名前 <span class="req-mark">必須</span></label>
               <input class="form-input" type="text" id="name" name="name" placeholder="例：山田 太郎" autocomplete="name" required>
-              <span class="form-error-msg" id="name-err">お名前を入力してください</span>
+              <span class="form-err-msg" id="name-err">お名前を入力してください</span>
             </div>
             <div class="form-group">
-              <label class="form-label" for="furigana">
-                フリガナ <span class="form-required">必須</span>
-              </label>
+              <label class="form-label" for="furigana">フリガナ <span class="req-mark">必須</span></label>
               <input class="form-input" type="text" id="furigana" name="furigana" placeholder="例：ヤマダ タロウ" required>
-              <span class="form-error-msg" id="furigana-err">フリガナを入力してください</span>
+              <span class="form-err-msg" id="furigana-err">フリガナを入力してください</span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="age">
-                年齢 <span class="form-required">必須</span>
-              </label>
+              <label class="form-label" for="age">年齢 <span class="req-mark">必須</span></label>
               <select class="form-select" id="age" name="age" required>
                 <option value="">選択してください</option>
-                <option>10代</option>
-                <option>20〜24歳</option>
-                <option>25〜29歳</option>
-                <option>30〜34歳</option>
-                <option>35〜39歳</option>
-                <option>40〜44歳</option>
-                <option>45〜49歳</option>
-                <option>50歳以上</option>
+                <option>10代</option><option>20〜24歳</option><option>25〜29歳</option>
+                <option>30〜34歳</option><option>35〜39歳</option><option>40〜44歳</option>
+                <option>45〜49歳</option><option>50歳以上</option>
               </select>
-              <span class="form-error-msg" id="age-err">年齢を選択してください</span>
+              <span class="form-err-msg" id="age-err">年齢を選択してください</span>
             </div>
             <div class="form-group">
-              <label class="form-label" for="status">
-                現在のご状況 <span class="form-required">必須</span>
-              </label>
+              <label class="form-label" for="status">現在のご状況 <span class="req-mark">必須</span></label>
               <select class="form-select" id="status" name="status" required>
                 <option value="">選択してください</option>
-                <option>大学生・大学院生</option>
-                <option>専門学校生</option>
-                <option>会社員・公務員</option>
-                <option>自営業・フリーランス</option>
-                <option>主婦・主夫</option>
-                <option>求職中</option>
-                <option>その他</option>
+                <option>大学生・大学院生</option><option>専門学校生</option>
+                <option>会社員・公務員</option><option>自営業・フリーランス</option>
+                <option>主婦・主夫</option><option>求職中</option><option>その他</option>
               </select>
-              <span class="form-error-msg" id="status-err">現在のご状況を選択してください</span>
+              <span class="form-err-msg" id="status-err">現在のご状況を選択してください</span>
             </div>
           </div>
 
-          <!-- 連絡先 -->
-          <div class="form-section-title">連絡先</div>
+          <div class="form-sec-title">連絡先</div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="email">
-                メールアドレス <span class="form-required">必須</span>
-              </label>
+              <label class="form-label" for="email">メールアドレス <span class="req-mark">必須</span></label>
               <input class="form-input" type="email" id="email" name="email" placeholder="例：taro@example.com" autocomplete="email" required>
-              <span class="form-error-msg" id="email-err">正しいメールアドレスを入力してください</span>
+              <span class="form-err-msg" id="email-err">正しいメールアドレスを入力してください</span>
             </div>
             <div class="form-group">
-              <label class="form-label" for="phone">
-                電話番号 <span class="form-required">必須</span>
-              </label>
+              <label class="form-label" for="phone">電話番号 <span class="req-mark">必須</span></label>
               <input class="form-input" type="tel" id="phone" name="phone" placeholder="例：090-1234-5678" autocomplete="tel" required>
-              <span class="form-error-msg" id="phone-err">電話番号を入力してください</span>
+              <span class="form-err-msg" id="phone-err">電話番号を入力してください</span>
             </div>
           </div>
 
-          <!-- 希望勤務条件 -->
-          <div class="form-section-title">希望勤務条件</div>
+          <div class="form-sec-title">希望勤務条件</div>
           <div class="form-row full">
             <div class="form-group">
-              <label class="form-label">希望勤務曜日 <span class="form-optional">（任意・複数選択可）</span></label>
+              <label class="form-label">希望勤務曜日 <span class="opt-mark">（任意・複数選択可）</span></label>
               <div class="check-group">
-                <label class="check-item"><input type="checkbox" name="days" value="月"> <span>月</span></label>
-                <label class="check-item"><input type="checkbox" name="days" value="火"> <span>火</span></label>
-                <label class="check-item"><input type="checkbox" name="days" value="水"> <span>水</span></label>
-                <label class="check-item"><input type="checkbox" name="days" value="木"> <span>木</span></label>
-                <label class="check-item"><input type="checkbox" name="days" value="金"> <span>金</span></label>
-                <label class="check-item"><input type="checkbox" name="days" value="土"> <span>土</span></label>
-                <label class="check-item"><input type="checkbox" name="days" value="日"> <span>日</span></label>
+                <label class="check-item"><input type="checkbox" name="days" value="月"><span>月</span></label>
+                <label class="check-item"><input type="checkbox" name="days" value="火"><span>火</span></label>
+                <label class="check-item"><input type="checkbox" name="days" value="水"><span>水</span></label>
+                <label class="check-item"><input type="checkbox" name="days" value="木"><span>木</span></label>
+                <label class="check-item"><input type="checkbox" name="days" value="金"><span>金</span></label>
+                <label class="check-item"><input type="checkbox" name="days" value="土"><span>土</span></label>
+                <label class="check-item"><input type="checkbox" name="days" value="日"><span>日</span></label>
               </div>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">担当希望科目 <span class="form-optional">（任意・複数選択可）</span></label>
+              <label class="form-label">担当希望科目 <span class="opt-mark">（任意・複数選択可）</span></label>
               <div class="check-group">
-                <label class="check-item"><input type="checkbox" name="subjects" value="国語"> <span>国語</span></label>
-                <label class="check-item"><input type="checkbox" name="subjects" value="数学"> <span>数学</span></label>
-                <label class="check-item"><input type="checkbox" name="subjects" value="英語"> <span>英語</span></label>
-                <label class="check-item"><input type="checkbox" name="subjects" value="理科"> <span>理科</span></label>
-                <label class="check-item"><input type="checkbox" name="subjects" value="社会"> <span>社会</span></label>
+                <label class="check-item"><input type="checkbox" name="subjects" value="国語"><span>国語</span></label>
+                <label class="check-item"><input type="checkbox" name="subjects" value="数学"><span>数学</span></label>
+                <label class="check-item"><input type="checkbox" name="subjects" value="英語"><span>英語</span></label>
+                <label class="check-item"><input type="checkbox" name="subjects" value="理科"><span>理科</span></label>
+                <label class="check-item"><input type="checkbox" name="subjects" value="社会"><span>社会</span></label>
               </div>
             </div>
             <div class="form-group">
-              <label class="form-label">副業・Wワークの予定 <span class="form-optional">（任意）</span></label>
-              <div class="check-group">
-                <label class="check-item"><input type="radio" name="wwork" value="はい"> <span>あり（メインは別にある）</span></label>
-                <label class="check-item"><input type="radio" name="wwork" value="いいえ"> <span>なし（こちらがメイン）</span></label>
+              <label class="form-label">副業・Wワークの予定 <span class="opt-mark">（任意）</span></label>
+              <div class="check-group" style="flex-direction:column;">
+                <label class="check-item"><input type="radio" name="wwork" value="あり（メインは別にある）"><span>あり（メインは別にある）</span></label>
+                <label class="check-item"><input type="radio" name="wwork" value="なし（こちらがメイン）"><span>なし（こちらがメイン）</span></label>
               </div>
             </div>
           </div>
 
-          <!-- 志望動機 -->
-          <div class="form-section-title">志望動機・自己PR</div>
+          <div class="form-sec-title">志望動機・自己PR</div>
           <div class="form-row full">
             <div class="form-group">
-              <label class="form-label" for="motivation">
-                志望動機・自己PR <span class="form-required">必須</span>
-              </label>
-              <textarea class="form-textarea" id="motivation" name="motivation" placeholder="応募のきっかけ、得意科目・経験、週何コマ程度働きたいかなど、自由にご記入ください。" required></textarea>
-              <span class="form-error-msg" id="motivation-err">志望動機・自己PRをご記入ください</span>
+              <label class="form-label" for="motivation">志望動機・自己PR <span class="req-mark">必須</span></label>
+              <textarea class="form-textarea" id="motivation" name="motivation"
+                placeholder="応募のきっかけ、得意科目・経験、週何コマ程度働きたいかなど、自由にご記入ください。" required></textarea>
+              <span class="form-err-msg" id="motivation-err">志望動機・自己PRをご記入ください</span>
             </div>
           </div>
 
-          <!-- 個人情報同意 -->
           <div class="form-agree">
             <input type="checkbox" id="agree" name="agree" required>
             <label for="agree">
-              ご入力いただいた個人情報は、採用選考のみに使用し、第三者への提供は行いません。
+              ご入力いただいた個人情報は採用選考のみに使用し、第三者への提供は行いません。
               <a href="https://beducate.jp/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意のうえ送信してください。
             </label>
           </div>
-          <span class="form-error-msg" id="agree-err" style="display:none; margin-bottom:12px;">個人情報の取り扱いへの同意が必要です</span>
+          <span class="form-err-msg" id="agree-err" style="display:none;margin-bottom:12px;">個人情報の取り扱いへの同意が必要です</span>
 
           <div class="form-submit-wrap">
             <button type="submit" class="btn-submit" id="submitBtn">
@@ -1130,123 +1265,103 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<!-- ══════════ FOOTER ══════════ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <div class="footer-logo-mark">
-        <svg><use href="#ico-book"/></svg>
+      <div class="footer-logo-mark"><svg><use href="#ico-book"/></svg></div>
+      <div class="footer-brand">
+        <div class="footer-brand-main">MANABIYA <span>B</span>ースタディ</div>
+        <div class="footer-brand-sub">運営：beducate（ベデュケイト）</div>
       </div>
-      <span class="footer-logo-name">MANABIYA <span>B</span>ースタディ</span>
     </div>
     <div class="footer-info">
       〒682-0016　鳥取県倉吉市海田西町2丁目95<br>
-      運営：BEducate（ビーエデュケイト）<br>
-      &copy; 2025 BEducate. All rights reserved.
+      mail：manabiya.b-study@outlook.jp<br>
+      &copy; 2025 beducate. All rights reserved.
     </div>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════ EmailJS ═══════════════════════════════ -->
+<!-- ══════════ EmailJS ══════════ -->
 <!--
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   EmailJS セットアップ手順
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   1. https://www.emailjs.com/ でアカウント作成（無料）
   2. Email Services → Add New Service → Outlook を選択
-     manabiya.b-study@outlook.jp でログインして連携
-     → SERVICE_ID をメモ（例: service_xxxxxxx）
+     manabiya.b-study@outlook.jp で連携 → SERVICE_ID をメモ
 
-  3. Email Templates → Create New Template を2つ作成:
+  3. Email Templates を2つ作成:
 
-  【テンプレート①：塾への通知メール】
-    Template Name: admin_notification
-    To Email:      manabiya.b-study@outlook.jp
-    Subject:       【講師応募】{{name}}様よりご応募がありました
+  【テンプレート①：塾への通知】
+    To Email: manabiya.b-study@outlook.jp
+    Subject:  【講師応募】{{name}}様よりご応募がありました
     Body:
-      新しい講師応募がありました。
-      ─────────────────
-      お名前：{{name}}（{{furigana}}）
-      年齢：{{age}}
-      状況：{{status}}
-      メール：{{applicant_email}}
-      電話：{{phone}}
-      希望曜日：{{days}}
-      担当希望科目：{{subjects}}
-      Wワーク：{{wwork}}
-      志望動機：{{motivation}}
-      応募日時：{{sent_date}}
-      ─────────────────
-    → TEMPLATE_ID_ADMIN をメモ（例: template_xxxxxxx）
+      お名前：{{name}}（{{furigana}}）/ 年齢：{{age}} / 状況：{{status}}
+      メール：{{applicant_email}} / 電話：{{phone}}
+      希望曜日：{{days}} / 希望科目：{{subjects}} / Wワーク：{{wwork}}
+      志望動機：{{motivation}} / 応募日時：{{sent_date}}
+    → TEMPLATE_ID_ADMIN をメモ
 
-  【テンプレート②：応募者への確認メール】
-    Template Name: user_confirmation
-    To Email:      {{applicant_email}}
-    Subject:       【MANABIYA Bースタディ】ご応募ありがとうございます
+  【テンプレート②：応募者への確認】
+    To Email: {{applicant_email}}
+    Subject:  【MANABIYA Bースタディ】ご応募ありがとうございます
     Body:
       {{name}} 様
-
-      この度はMANABIYA Bースタディへのご応募、誠にありがとうございます。
-      以下の内容でご応募を受け付けました。
-
-      ─────────────────
-      お名前：{{name}}（{{furigana}}）
-      メール：{{applicant_email}}
-      電話：{{phone}}
-      担当希望科目：{{subjects}}
-      ─────────────────
-
+      この度はご応募ありがとうございます。
       担当者より2〜3営業日以内にご連絡いたします。
-      ご不明な点は下記までお問い合わせください。
-
-      MANABIYA Bースタディ
-      manabiya.b-study@outlook.jp
-      鳥取県倉吉市海田西町2丁目95
-    → TEMPLATE_ID_USER をメモ（例: template_yyyyyyy）
+      MANABIYA Bースタディ / manabiya.b-study@outlook.jp
+    → TEMPLATE_ID_USER をメモ
 
   4. Account → General → Public Key をメモ
-
-  5. 下記 CONFIG の3箇所を書き換えるだけで動作します。
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. 下記 CONFIG の4行を書き換えてください
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function () {
   'use strict';
 
-  /* ── CONFIG ── ここだけ書き換えてください ── */
-  const EMAILJS_PUBLIC_KEY   = 'YOUR_PUBLIC_KEY';     // EmailJS Public Key
-  const EMAILJS_SERVICE_ID   = 'YOUR_SERVICE_ID';     // Email Service ID
-  const EMAILJS_TEMPLATE_ADMIN = 'YOUR_TEMPLATE_ADMIN_ID'; // 塾への通知テンプレート
-  const EMAILJS_TEMPLATE_USER  = 'YOUR_TEMPLATE_USER_ID';  // 応募者確認テンプレート
+  /* ── CONFIG ──  ここだけ書き換えてください ── */
+  const EMAILJS_PUBLIC_KEY     = 'YOUR_PUBLIC_KEY';
+  const EMAILJS_SERVICE_ID     = 'YOUR_SERVICE_ID';
+  const EMAILJS_TEMPLATE_ADMIN = 'YOUR_TEMPLATE_ADMIN_ID';
+  const EMAILJS_TEMPLATE_USER  = 'YOUR_TEMPLATE_USER_ID';
   /* ─────────────────────────────────────── */
 
   emailjs.init(EMAILJS_PUBLIC_KEY);
 
-  const form       = document.getElementById('applyForm');
-  const formBody   = document.getElementById('formBody');
-  const formSuccess = document.getElementById('formSuccess');
-  const submitBtn  = document.getElementById('submitBtn');
-  const alertBox   = document.getElementById('formAlert');
-  const alertMsg   = document.getElementById('formAlertMsg');
+  /* ── Scroll-reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  /* ── helpers ── */
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale')
+    .forEach(el => observer.observe(el));
+
+  /* ── Header shadow on scroll ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* ── Form helpers ── */
   function getChecked(name) {
     return [...document.querySelectorAll(`input[name="${name}"]:checked`)]
       .map(el => el.value).join('、') || '未選択';
   }
 
-  function showError(fieldId, show) {
-    const input = document.getElementById(fieldId);
-    const err   = document.getElementById(fieldId + '-err');
-    if (!input || !err) return;
-    if (show) {
-      input.classList.add('error');
-      err.style.display = 'block';
-    } else {
-      input.classList.remove('error');
-      err.style.display = 'none';
-    }
+  function showErr(id, show) {
+    const el  = document.getElementById(id);
+    const err = document.getElementById(id + '-err');
+    if (!el || !err) return;
+    el.classList.toggle('error', show);
+    err.style.display = show ? 'block' : 'none';
   }
 
   function validate() {
@@ -1254,39 +1369,38 @@
     ['name','furigana','age','status','email','phone','motivation'].forEach(id => {
       const el = document.getElementById(id);
       const empty = !el.value.trim();
-      const emailBad = id === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
-      showError(id, empty || emailBad);
-      if (empty || emailBad) ok = false;
+      const badEmail = id === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+      showErr(id, empty || badEmail);
+      if (empty || badEmail) ok = false;
     });
     const agree = document.getElementById('agree');
     const agreeErr = document.getElementById('agree-err');
-    if (!agree.checked) {
-      agreeErr.style.display = 'block';
-      ok = false;
-    } else {
-      agreeErr.style.display = 'none';
-    }
+    if (!agree.checked) { agreeErr.style.display = 'block'; ok = false; }
+    else { agreeErr.style.display = 'none'; }
     return ok;
   }
 
-  /* ── clear error on input ── */
   ['name','furigana','age','status','email','phone','motivation'].forEach(id => {
     const el = document.getElementById(id);
-    if (!el) return;
-    el.addEventListener('input', () => showError(id, false));
+    if (el) el.addEventListener('input', () => showErr(id, false));
   });
 
-  /* ── submit ── */
-  form.addEventListener('submit', async function (e) {
+  /* ── Submit ── */
+  const form      = document.getElementById('applyForm');
+  const formBody  = document.getElementById('formBody');
+  const formOk    = document.getElementById('formSuccess');
+  const submitBtn = document.getElementById('submitBtn');
+  const alertBox  = document.getElementById('formAlert');
+  const alertMsg  = document.getElementById('formAlertMsg');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     alertBox.style.display = 'none';
-
     if (!validate()) {
-      form.querySelector('.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      form.querySelector('.error')?.scrollIntoView({ behavior:'smooth', block:'center' });
       return;
     }
 
-    /* Loading state */
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="spinner"></span> 送信中…';
 
@@ -1308,21 +1422,16 @@
     };
 
     try {
-      /* Send notification to school */
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, params);
-      /* Send confirmation to applicant */
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_USER, params);
-
-      /* Show success */
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_USER,  params);
       formBody.style.display = 'none';
-      formSuccess.style.display = 'block';
-      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
+      formOk.style.display   = 'block';
+      formOk.scrollIntoView({ behavior:'smooth', block:'start' });
     } catch (err) {
-      console.error('EmailJS error:', err);
+      console.error(err);
       alertMsg.textContent = '送信に失敗しました。大変お手数ですが、manabiya.b-study@outlook.jp まで直接メールにてご連絡ください。';
       alertBox.style.display = 'flex';
-      alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      alertBox.scrollIntoView({ behavior:'smooth', block:'center' });
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<svg><use href="#ico-send"/></svg> 再度送信する';
     }
