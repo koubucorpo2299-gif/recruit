@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1aaa6e">
   <title>講師募集｜MANABIYA Bースタディ【鳥取県倉吉市】</title>
   <meta name="description" content="MANABIYA Bースタディ（倉吉市）では塾講師を募集。1コマ80分1,500円〜のコマ給制。週1日からOK。未経験歓迎。副業・Wワーク可。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -557,35 +558,189 @@
     .footer-brand-sub { font-size:11px; color:rgba(255,255,255,.35); font-weight:500; }
     .footer-info { font-size:12px; color:rgba(255,255,255,.3); text-align:right; line-height:1.8; }
 
-    /* ─── RESPONSIVE ─── */
+    /* ─── スマホ固定CTA ─── */
+    .sp-cta {
+      display:none;
+      position:fixed; bottom:0; left:0; right:0; z-index:300;
+      padding:12px 16px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom));
+      background:rgba(255,255,255,0.96);
+      backdrop-filter:blur(10px);
+      border-top:1px solid var(--line);
+      box-shadow:0 -4px 20px rgba(0,0,0,0.08);
+    }
+    .sp-cta-btn {
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      background:linear-gradient(135deg, var(--g6), var(--g7));
+      color:white; padding:14px 24px; border-radius:var(--r-sm);
+      font-size:15px; font-weight:800; width:100%;
+      box-shadow:var(--shadow-green);
+    }
+    @media (max-width:640px) {
+      .sp-cta { display:block; }
+      body { padding-bottom:80px; }
+    }
+
+    /* ─── RESPONSIVE : タブレット (〜860px) ─── */
     @media (max-width:860px) {
-      .hdr { padding:0 20px; }
+      /* Header */
+      .hdr { padding:0 16px; }
       .hdr-nav { display:none; }
+      .hdr-brand-sub { display:none; }
+      .hdr-cta { padding:8px 16px; font-size:12px; }
+
+      /* Sections */
       .sec { padding:56px 20px; }
-      .hero { padding:56px 20px 72px; }
-      .hero-inner { grid-template-columns:1fr; gap:40px; }
+      .sec-hd { margin-bottom:36px; }
+
+      /* Hero */
+      .hero { padding:48px 20px 64px; }
+      .hero-inner { grid-template-columns:1fr; gap:36px; }
       .hero-image-wrap { order:-1; }
-      .hero-badge-float.b1 { left:10px; }
-      .hero-badge-float.b2 { right:10px; }
-      .appeal-grid { grid-template-columns:1fr 1fr; }
+      .hero-badge-float.b1 { left:12px; bottom:16px; }
+      .hero-badge-float.b2 { right:12px; top:12px; }
+
+      /* Appeal */
+      .appeal-grid { grid-template-columns:1fr 1fr; gap:14px; }
+
+      /* Salary */
       .salary-layout { grid-template-columns:1fr; }
+      .salary-side { flex-direction:row; flex-wrap:wrap; }
+      .salary-side-card { min-width:calc(50% - 7px); flex:1; }
+
+      /* WorkStyle */
       .ws-grid { grid-template-columns:1fr 1fr; }
       .ws-ex-grid { grid-template-columns:1fr; }
+
+      /* Job table */
       .job-row { grid-template-columns:1fr; }
-      .job-th { border-bottom:1px solid var(--line); }
+      .job-th { border-bottom:1px solid var(--line); padding:14px 18px; }
+      .job-td { padding:14px 18px; }
+
+      /* Requirements */
       .req-grid { grid-template-columns:1fr; }
-      .loc-body { grid-template-columns:1fr; gap:24px; }
-      .form-row { grid-template-columns:1fr; }
-      .form-body { padding:24px; }
-      .form-hd { padding:28px 24px; }
-      .footer-inner { flex-direction:column; text-align:center; }
+
+      /* Location */
+      .loc-body { grid-template-columns:1fr; gap:24px; padding:24px; }
+      .loc-map { height:240px; }
+
+      /* Form */
+      .form-row { grid-template-columns:1fr; gap:14px; }
+      .form-body { padding:24px 20px; }
+      .form-hd { padding:28px 20px; }
+
+      /* Footer */
+      .footer-inner { flex-direction:column; align-items:center; text-align:center; gap:16px; }
       .footer-info { text-align:center; }
     }
-    @media (max-width:540px) {
-      .appeal-grid { grid-template-columns:1fr; }
+
+    /* ─── RESPONSIVE : スマートフォン (〜640px) ─── */
+    @media (max-width:640px) {
+      /* Header */
+      .hdr { height:56px; }
+      .hdr-logo-mark img { height:30px; }
+      .hdr-brand-main { font-size:13px; }
+      .hdr-cta { display:none; }
+
+      /* Sections */
+      .sec { padding:48px 16px; }
+      .sec-title { font-size:22px; }
+      .sec-sub { font-size:14px; }
+
+      /* Hero */
+      .hero { padding:36px 16px 52px; }
+      .hero-eyebrow { font-size:11px; padding:4px 12px; }
+      .hero h1 { font-size:26px; line-height:1.3; }
+      .hero-lead { font-size:14px; margin-bottom:24px; }
+      .hero-chips { gap:7px; margin-bottom:24px; }
+      .hero-chip { font-size:12px; padding:6px 11px; }
+      .hero-actions { flex-direction:column; gap:10px; }
+      .btn-primary { width:100%; justify-content:center; padding:14px 24px; font-size:15px; }
+      .btn-outline { width:100%; justify-content:center; padding:13px 24px; }
+      /* Hero image */
+      .hero-image-frame { border-radius:var(--r-lg); }
+      .hero-badge-float { padding:8px 12px; }
+      .hero-badge-float .badge-icon { width:26px; height:26px; }
+      .hero-badge-float .badge-icon svg { width:14px; height:14px; }
+      .hero-badge-float .badge-val { font-size:13px; }
+      .hero-badge-float .badge-label { font-size:10px; }
+
+      /* Urgent */
+      .urgent-strip { flex-direction:column; gap:6px; text-align:center; padding:14px 16px; }
+      .urgent-text { font-size:13px; }
+
+      /* Appeal */
+      .appeal-grid { grid-template-columns:1fr; gap:12px; }
+      .appeal-card { padding:22px 20px; }
+      .appeal-num { font-size:36px; }
+      .appeal-icon { width:40px; height:40px; margin-bottom:14px; }
+      .appeal-card h3 { font-size:14px; }
+      .appeal-card p { font-size:13px; }
+
+      /* Salary */
+      .salary-main { padding:28px 20px; }
+      .salary-primary-num { font-size:48px; }
+      .salary-side { flex-direction:column; }
+      .salary-side-card { min-width:100%; padding:16px; }
+      .salary-side-val { font-size:15px; }
+
+      /* WorkStyle */
+      .ws-grid { grid-template-columns:1fr 1fr; gap:10px; }
+      .ws-card { padding:18px 14px; }
+      .ws-card-val { font-size:14px; }
+      .ws-examples { padding:18px 16px; }
+      .ws-examples-title { font-size:12px; }
+      .ws-ex { font-size:12px; }
+
+      /* Job table */
+      .job-th { font-size:12px; padding:12px 16px; }
+      .job-td { font-size:13px; padding:12px 16px; }
+      .job-td strong { font-size:14px; }
+      .tags { gap:5px; }
+      .tag { font-size:11px; padding:2px 8px; }
+
+      /* Requirements */
+      .req-card { padding:22px 18px; }
+      .req-list li { font-size:13px; }
+      .open-banner { padding:22px 16px; }
+      .open-chips { gap:6px; }
+      .open-chip { font-size:12px; padding:6px 13px; }
+
+      /* Location */
+      .loc-body { padding:20px 16px; }
+      .loc-name { font-size:15px; }
+      .loc-list li { font-size:13px; }
+      .loc-access-item { font-size:13px; }
+      .loc-map { height:200px; }
+
+      /* Form */
+      .form-hd { padding:24px 16px; }
+      .form-hd h2 { font-size:19px; }
+      .form-body { padding:20px 16px; }
+      .form-sec-title { font-size:10px; }
+      .form-label { font-size:12px; }
+      .form-input, .form-select, .form-textarea { font-size:16px; /* iOS zoom防止 */ padding:10px 12px; }
+      .check-item span { font-size:13px; }
+      .btn-submit { width:100%; padding:16px 24px; font-size:15px; }
+      .form-agree { padding:14px 16px; }
+      .form-agree label { font-size:12px; }
+
+      /* Footer */
+      footer { padding:28px 16px; }
+      .footer-logo-mark img { height:28px; }
+      .footer-brand-main { font-size:13px; }
+      .footer-brand-sub { font-size:10px; }
+      .footer-info { font-size:11px; }
+    }
+
+    /* ─── RESPONSIVE : 小型スマートフォン (〜390px) ─── */
+    @media (max-width:390px) {
+      .hero h1 { font-size:22px; }
+      .hero-chip { font-size:11px; padding:5px 9px; }
+      .salary-primary-num { font-size:40px; }
       .ws-grid { grid-template-columns:1fr; }
-      .hero h1 { font-size:28px; }
-      .urgent-strip { flex-direction:column; gap:4px; text-align:center; }
+      .appeal-card::after { display:none; }
+      .hero-badge-float.b2 { display:none; }
     }
   </style>
 </head>
@@ -1264,6 +1419,14 @@
   </div>
 </section>
 
+<!-- ══════════ スマホ固定CTA ══════════ -->
+<div class="sp-cta" id="spCta">
+  <a href="#apply" class="sp-cta-btn">
+    <svg width="16" height="16"><use href="#ico-pencil"/></svg>
+    応募フォームへ
+  </a>
+</div>
+
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
   <div class="footer-inner">
@@ -1332,6 +1495,15 @@
   /* ─────────────────────────────────────── */
 
   emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  /* ── スマホ固定CTA：フォームに近づいたら隠す ── */
+  const spCta   = document.getElementById('spCta');
+  const applyEl = document.getElementById('apply');
+  if (spCta && applyEl) {
+    new IntersectionObserver(entries => {
+      spCta.style.display = entries[0].isIntersecting ? 'none' : '';
+    }, { threshold: 0.1 }).observe(applyEl);
+  }
 
   /* ── Scroll-reveal ── */
   const observer = new IntersectionObserver((entries) => {
