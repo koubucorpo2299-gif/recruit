@@ -453,6 +453,48 @@
     .loc-map { height:280px; }
     .loc-map iframe { width:100%; height:100%; border:0; display:block; }
 
+    /* ─── FLOW ─── */
+    .flow-wrap {
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .flow-step {
+      display: flex; align-items: flex-start; gap: 20px;
+      background: white; border: 1px solid var(--line);
+      border-radius: var(--r-lg); padding: 28px 28px;
+      box-shadow: var(--shadow-xs);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .flow-step:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .flow-step-last { border-color: var(--g2); background: var(--g0); }
+    .flow-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--g1); color: var(--g6);
+      font-size: 22px; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; border: 2px solid var(--g2);
+    }
+    .flow-num.last { background: var(--g6); color: white; border-color: var(--g6); }
+    .flow-body { flex: 1; }
+    .flow-title {
+      font-size: 17px; font-weight: 800; color: var(--ink);
+      margin-bottom: 6px; line-height: 1.3;
+    }
+    .flow-desc { font-size: 14px; color: var(--sub); line-height: 1.8; margin-bottom: 12px; }
+    .flow-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .flow-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--k1); border: 1px solid var(--line);
+      color: var(--mid); font-size: 12px; font-weight: 600;
+      padding: 4px 12px; border-radius: 20px;
+    }
+    .flow-badge.green {
+      background: var(--g1); border-color: var(--g2); color: var(--g7);
+    }
+    .flow-arrow {
+      display: flex; justify-content: center; align-items: center;
+      padding: 6px 0; color: var(--g5);
+    }
+
     /* ─── FORM ─── */
     .form-sec { background:var(--bg); }
     .form-wrap { background:white; border:1px solid var(--line); border-radius:var(--r-xl); box-shadow:var(--shadow-lg); overflow:hidden; }
@@ -719,6 +761,12 @@
       .loc-list li { font-size:13px; }
       .loc-access-item { font-size:13px; }
       .loc-map { height:200px; }
+
+      /* Flow */
+      .flow-step { padding:20px 16px; gap:14px; }
+      .flow-num { width:40px; height:40px; font-size:18px; }
+      .flow-title { font-size:15px; }
+      .flow-desc { font-size:13px; }
 
       /* Form */
       .form-hd { padding:24px 16px; }
@@ -1283,6 +1331,60 @@
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           title="MANABIYA Bースタディ アクセスマップ"></iframe>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FLOW ══════════ -->
+<section class="sec sec-alt">
+  <div class="container">
+    <div class="sec-hd reveal">
+      <div class="sec-eyebrow">Selection Flow</div>
+      <h2 class="sec-title">選考の流れ</h2>
+      <p class="sec-sub">ご応募から内定まで、最短2週間程度を予定しています。</p>
+    </div>
+    <div class="flow-wrap reveal">
+
+      <div class="flow-step">
+        <div class="flow-num">❶</div>
+        <div class="flow-body">
+          <div class="flow-title">書類選考</div>
+          <div class="flow-desc">履歴書・職務経歴書をご提出ください。内容を確認のうえ、担当者よりご連絡いたします。</div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </div>
+
+      <div class="flow-step">
+        <div class="flow-num">❷</div>
+        <div class="flow-body">
+          <div class="flow-title">面接 ＋ 筆記試験</div>
+          <div class="flow-desc">面接（約20分）と筆記試験（30〜40分程度）を同日に実施します。回数は1回のみです。</div>
+          <div class="flow-badges">
+            <span class="flow-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>面接 約20分</span>
+            <span class="flow-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>筆記試験 30〜40分</span>
+            <span class="flow-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>面接回数 1回のみ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </div>
+
+      <div class="flow-step flow-step-last">
+        <div class="flow-num last">❸</div>
+        <div class="flow-body">
+          <div class="flow-title">内定</div>
+          <div class="flow-desc">選考通過の方へご連絡いたします。ご応募から内定まで、最短2週間程度を予定しています。</div>
+          <div class="flow-badges">
+            <span class="flow-badge green"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>最短2週間で内定</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
