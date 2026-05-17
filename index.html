@@ -95,6 +95,7 @@
     .hdr-brand { display:flex; flex-direction:column; gap:0; }
     .hdr-brand-main { font-size:14px; font-weight:800; color:var(--ink); letter-spacing:.02em; line-height:1.2; }
     .hdr-brand-main span { color:var(--ink); }
+    .hdr-brand-sub-inline { font-size:12px; font-weight:500; color:var(--sub); letter-spacing:.02em; }
     .hdr-brand-sub { font-size:10px; color:var(--muted); font-weight:500; letter-spacing:.05em; }
     .hdr-nav { display:flex; align-items:center; gap:28px; }
     .hdr-nav a { font-size:13px; color:var(--sub); font-weight:500; transition:color .2s; position:relative; }
@@ -550,8 +551,12 @@
     footer { background:var(--ink2); padding:36px; border-top:none; }
     .footer-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
     .footer-logo { display:flex; align-items:center; gap:10px; }
-    .footer-logo-mark { height:36px; width:auto; display:block; }
-    .footer-logo-mark img { height:36px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1); }
+    .footer-logo-mark {
+      height:44px; width:44px; border-radius:10px;
+      background:white; display:flex; align-items:center; justify-content:center;
+      padding:4px; flex-shrink:0;
+    }
+    .footer-logo-mark img { height:100%; width:100%; display:block; object-fit:contain; }
     .footer-brand { display:flex; flex-direction:column; }
     .footer-brand-main { font-size:14px; font-weight:800; color:white; }
     .footer-brand-main span { color:white; }
@@ -593,11 +598,13 @@
       .sec-hd { margin-bottom:36px; }
 
       /* Hero */
-      .hero { padding:48px 20px 64px; }
-      .hero-inner { grid-template-columns:1fr; gap:36px; }
-      .hero-image-wrap { order:-1; }
-      .hero-badge-float.b1 { left:12px; bottom:16px; }
-      .hero-badge-float.b2 { right:12px; top:12px; }
+      .hero { padding:48px 20px 64px; overflow:hidden; }
+      .hero-inner { grid-template-columns:1fr; gap:28px; }
+      .hero-image-wrap { order:-1; width:100%; }
+      .hero-image-frame { aspect-ratio:16/9; border-radius:var(--r-lg); max-height:280px; }
+      .hero-badge-float.b1 { left:10px; bottom:12px; padding:7px 12px; }
+      .hero-badge-float.b2 { right:10px; top:10px; padding:7px 12px; }
+      .hero-dots { display:none; }
 
       /* Appeal */
       .appeal-grid { grid-template-columns:1fr 1fr; gap:14px; }
@@ -657,11 +664,12 @@
       .btn-primary { width:100%; justify-content:center; padding:14px 24px; font-size:15px; }
       .btn-outline { width:100%; justify-content:center; padding:13px 24px; }
       /* Hero image */
-      .hero-image-frame { border-radius:var(--r-lg); }
-      .hero-badge-float { padding:8px 12px; }
-      .hero-badge-float .badge-icon { width:26px; height:26px; }
-      .hero-badge-float .badge-icon svg { width:14px; height:14px; }
-      .hero-badge-float .badge-val { font-size:13px; }
+      .hero-image-frame { aspect-ratio:16/9; max-height:240px; border-radius:var(--r-lg); }
+      .hero-image-wrap { width:100%; overflow:visible; }
+      .hero-badge-float { padding:6px 10px; gap:6px; }
+      .hero-badge-float .badge-icon { width:24px; height:24px; border-radius:6px; }
+      .hero-badge-float .badge-icon svg { width:13px; height:13px; }
+      .hero-badge-float .badge-val { font-size:12px; }
       .hero-badge-float .badge-label { font-size:10px; }
 
       /* Urgent */
@@ -726,7 +734,7 @@
 
       /* Footer */
       footer { padding:28px 16px; }
-      .footer-logo-mark img { height:28px; }
+      .footer-logo-mark { height:38px; width:38px; }
       .footer-brand-main { font-size:13px; }
       .footer-brand-main { font-size:13px; }
       .footer-info { font-size:11px; }
@@ -834,7 +842,7 @@
       <img src="images/logo.png" alt="MANABIYA Bースタディ ロゴ">
     </div>
     <div class="hdr-brand">
-      <div class="hdr-brand-main">MANABIYA <span>B</span>ースタディ</div>
+      <div class="hdr-brand-main">MANABIYA <span>B</span>ースタディ　<span class="hdr-brand-sub-inline">講師採用ページ</span></div>
     </div>
   </div>
   <nav class="hdr-nav">
@@ -1128,6 +1136,14 @@
             <li>自習室利用生徒の学習フォロー・質問対応</li>
             <li>体験授業のサポート・保護者対応補助など教室運営業務</li>
           </ul>
+        </div>
+      </div>
+      <div class="job-row">
+        <div class="job-th"><svg><use href="#ico-briefcase"/></svg>雇用会社</div>
+        <div class="job-td">
+          <strong>株式会社beducate（ベデュケイト）</strong>
+          〒682-0016　鳥取県倉吉市海田西町2丁目95<br>
+          MANABIYA Bースタディ 運営会社
         </div>
       </div>
       <div class="job-row">
