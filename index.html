@@ -94,7 +94,7 @@
     .hdr-logo-mark img { height:36px; width:auto; display:block; object-fit:contain; }
     .hdr-brand { display:flex; flex-direction:column; gap:0; }
     .hdr-brand-main { font-size:14px; font-weight:800; color:var(--ink); letter-spacing:.02em; line-height:1.2; }
-    .hdr-brand-main span { color:var(--g6); }
+    .hdr-brand-main span { color:var(--ink); }
     .hdr-brand-sub { font-size:10px; color:var(--muted); font-weight:500; letter-spacing:.05em; }
     .hdr-nav { display:flex; align-items:center; gap:28px; }
     .hdr-nav a { font-size:13px; color:var(--sub); font-weight:500; transition:color .2s; position:relative; }
@@ -554,8 +554,7 @@
     .footer-logo-mark img { height:36px; width:auto; display:block; object-fit:contain; filter:brightness(0) invert(1); }
     .footer-brand { display:flex; flex-direction:column; }
     .footer-brand-main { font-size:14px; font-weight:800; color:white; }
-    .footer-brand-main span { color:var(--g5); }
-    .footer-brand-sub { font-size:11px; color:rgba(255,255,255,.35); font-weight:500; }
+    .footer-brand-main span { color:white; }
     .footer-info { font-size:12px; color:rgba(255,255,255,.3); text-align:right; line-height:1.8; }
 
     /* ─── スマホ固定CTA ─── */
@@ -729,7 +728,7 @@
       footer { padding:28px 16px; }
       .footer-logo-mark img { height:28px; }
       .footer-brand-main { font-size:13px; }
-      .footer-brand-sub { font-size:10px; }
+      .footer-brand-main { font-size:13px; }
       .footer-info { font-size:11px; }
     }
 
@@ -836,7 +835,6 @@
     </div>
     <div class="hdr-brand">
       <div class="hdr-brand-main">MANABIYA <span>B</span>ースタディ</div>
-      <div class="hdr-brand-sub">運営：beducate（ベデュケイト）</div>
     </div>
   </div>
   <nav class="hdr-nav">
@@ -933,8 +931,8 @@
 <section class="sec" id="appeal">
   <div class="container">
     <div class="sec-hd reveal">
-      <div class="sec-eyebrow">Why MANABIYA</div>
-      <h2 class="sec-title">MANABIYAで働く、6つの理由</h2>
+      <div class="sec-eyebrow">Why Bstudy</div>
+      <h2 class="sec-title">Bースタディで働く、6つの理由</h2>
       <p class="sec-sub">多くの講師が長く続けられる理由があります。専門性とライフスタイルを最大限に活かせる環境です。</p>
     </div>
     <div class="appeal-grid">
@@ -1137,7 +1135,8 @@
         <div class="job-td">
           <strong>アルバイト・パート</strong>
           契約期間：6ヶ月ごと（更新は3月・9月）<br>
-          試用期間：1ヶ月（本採用と同一給与条件）
+          試用期間：1ヶ月（本採用と同一給与条件）<br>
+          <span style="display:inline-block;margin-top:8px;padding:6px 12px;background:var(--g1);border:1px solid var(--g2);border-radius:6px;font-size:13px;color:var(--g7);">💬 業務委託契約についても応相談。ご希望の方はフォームの志望動機欄にご記載ください。</span>
         </div>
       </div>
       <div class="job-row">
@@ -1436,65 +1435,97 @@
       </div>
       <div class="footer-brand">
         <div class="footer-brand-main">MANABIYA <span>B</span>ースタディ</div>
-        <div class="footer-brand-sub">運営：beducate（ベデュケイト）</div>
       </div>
     </div>
     <div class="footer-info">
       〒682-0016　鳥取県倉吉市海田西町2丁目95<br>
       mail：manabiya.b-study@outlook.jp<br>
-      &copy; 2025 beducate. All rights reserved.
+      &copy; 2026 beducate. All rights reserved.
     </div>
   </div>
 </footer>
 
-<!-- ══════════ EmailJS ══════════ -->
-<!--
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  EmailJS セットアップ手順
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  1. https://www.emailjs.com/ でアカウント作成（無料）
-  2. Email Services → Add New Service → Outlook を選択
-     manabiya.b-study@outlook.jp で連携 → SERVICE_ID をメモ
+<!-- ══════════════════════════════════════════════════════
+  【メール送信 セットアップ手順】EmailJS（無料）を使用
 
-  3. Email Templates を2つ作成:
+  STEP 1: https://www.emailjs.com/ でアカウント作成
 
-  【テンプレート①：塾への通知】
-    To Email: manabiya.b-study@outlook.jp
-    Subject:  【講師応募】{{name}}様よりご応募がありました
-    Body:
-      お名前：{{name}}（{{furigana}}）/ 年齢：{{age}} / 状況：{{status}}
-      メール：{{applicant_email}} / 電話：{{phone}}
-      希望曜日：{{days}} / 希望科目：{{subjects}} / Wワーク：{{wwork}}
-      志望動機：{{motivation}} / 応募日時：{{sent_date}}
-    → TEMPLATE_ID_ADMIN をメモ
+  STEP 2: Email Services → Add New Service → Microsoft Outlook
+          → manabiya.b-study@outlook.jp でログイン・連携
+          → 表示された Service ID を下記 SERVICE_ID に貼り付け
 
-  【テンプレート②：応募者への確認】
-    To Email: {{applicant_email}}
-    Subject:  【MANABIYA Bースタディ】ご応募ありがとうございます
-    Body:
-      {{name}} 様
-      この度はご応募ありがとうございます。
-      担当者より2〜3営業日以内にご連絡いたします。
-      MANABIYA Bースタディ / manabiya.b-study@outlook.jp
-    → TEMPLATE_ID_USER をメモ
+  STEP 3: Email Templates → Create New Template を2回行う
 
-  4. Account → General → Public Key をメモ
-  5. 下記 CONFIG の4行を書き換えてください
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
--->
+  ▼ テンプレート① 塾への通知メール（TEMPLATE_ADMIN）
+    To email   : manabiya.b-study@outlook.jp
+    Subject    : 【講師応募】{{name}}様よりご応募がありました
+    Body（自由にカスタマイズ可）:
+    ─────────────────────────────
+    新しい応募が届きました。
+
+    お名前　：{{name}}（{{furigana}}）
+    年齢　　：{{age}}
+    現在状況：{{status}}
+    メール　：{{applicant_email}}
+    電話　　：{{phone}}
+    希望曜日：{{days}}
+    希望科目：{{subjects}}
+    Wワーク：{{wwork}}
+
+    【志望動機・自己PR】
+    {{motivation}}
+
+    応募日時：{{sent_date}}
+    ─────────────────────────────
+    → Save して表示される Template ID を TEMPLATE_ADMIN に貼り付け
+
+  ▼ テンプレート② 応募者への確認メール（TEMPLATE_USER）
+    To email   : {{applicant_email}}
+    Subject    : 【MANABIYA Bースタディ】ご応募ありがとうございます
+    Body（自由にカスタマイズ可）:
+    ─────────────────────────────
+    {{name}} 様
+
+    この度はMANABIYA Bースタディへのご応募、
+    誠にありがとうございます。
+
+    以下の内容で受け付けました。
+    お名前　：{{name}}
+    メール　：{{applicant_email}}
+    電話　　：{{phone}}
+    希望科目：{{subjects}}
+
+    担当者より2〜3営業日以内にご連絡いたします。
+    お気軽にお問い合わせください。
+
+    ━━━━━━━━━━━━━━━━━━━━━━━━
+    MANABIYA Bースタディ（beducate）
+    manabiya.b-study@outlook.jp
+    〒682-0016 鳥取県倉吉市海田西町2丁目95
+    ━━━━━━━━━━━━━━━━━━━━━━━━
+    ─────────────────────────────
+    → Save して表示される Template ID を TEMPLATE_USER に貼り付け
+
+  STEP 4: 右上アカウントアイコン → Account → Public Key をコピー
+          → 下記 PUBLIC_KEY に貼り付け
+
+  STEP 5: 下記4行を書き換えて保存・GitHubにプッシュすれば完了！
+══════════════════════════════════════════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 (function () {
   'use strict';
 
-  /* ── CONFIG ──  ここだけ書き換えてください ── */
-  const EMAILJS_PUBLIC_KEY     = 'YOUR_PUBLIC_KEY';
-  const EMAILJS_SERVICE_ID     = 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ADMIN = 'YOUR_TEMPLATE_ADMIN_ID';
-  const EMAILJS_TEMPLATE_USER  = 'YOUR_TEMPLATE_USER_ID';
-  /* ─────────────────────────────────────── */
+  /* ════════════════════════════════════
+     ここだけ書き換えてください（4箇所）
+     ════════════════════════════════════ */
+  const PUBLIC_KEY     = 'YOUR_PUBLIC_KEY';       // STEP4のPublic Key
+  const SERVICE_ID     = 'YOUR_SERVICE_ID';       // STEP2のService ID
+  const TEMPLATE_ADMIN = 'YOUR_TEMPLATE_ADMIN_ID'; // STEP3 テンプレート①のID
+  const TEMPLATE_USER  = 'YOUR_TEMPLATE_USER_ID';  // STEP3 テンプレート②のID
+  /* ════════════════════════════════════ */
 
-  emailjs.init(EMAILJS_PUBLIC_KEY);
+  emailjs.init(PUBLIC_KEY);
 
   /* ── スマホ固定CTA：フォームに近づいたら隠す ── */
   const spCta   = document.getElementById('spCta');
@@ -1595,8 +1626,8 @@
     };
 
     try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, params);
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_USER,  params);
+      await emailjs.send(SERVICE_ID, TEMPLATE_ADMIN, params);
+      await emailjs.send(SERVICE_ID, TEMPLATE_USER,  params);
       formBody.style.display = 'none';
       formOk.style.display   = 'block';
       formOk.scrollIntoView({ behavior:'smooth', block:'start' });
