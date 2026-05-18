@@ -291,9 +291,26 @@
     .hero-image-frame img {
       width:100%; height:100%;
       object-fit:cover; display:block;
-      transition: transform .6s cubic-bezier(.22,1,.36,1);
     }
-    .hero-image-frame:hover img { transform:scale(1.03); }
+    /* ─── HERO SLIDER ─── */
+    .hero-slider { position:relative; width:100%; height:100%; }
+    .hero-slide {
+      position:absolute; inset:0;
+      opacity:0; transition:opacity .8s ease;
+      pointer-events:none;
+    }
+    .hero-slide.active { opacity:1; pointer-events:auto; }
+    .hero-slide img { width:100%; height:100%; object-fit:cover; display:block; }
+    .hero-slider-dots {
+      position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
+      display:flex; gap:6px; z-index:10;
+    }
+    .slider-dot {
+      width:8px; height:8px; border-radius:50%;
+      background:rgba(255,255,255,0.5); border:none; cursor:pointer;
+      padding:0; transition:background .3s, transform .3s;
+    }
+    .slider-dot.active { background:white; transform:scale(1.3); }
     /* Floating badges on image */
     .hero-badge-float {
       position:absolute;
@@ -1063,7 +1080,26 @@
     <!-- Image -->
     <div class="hero-image-wrap reveal-right">
       <div class="hero-image-frame">
-        <img src="images/hero.png" alt="MANABIYA Bースタディ 講師と生徒の授業風景" loading="eager" fetchpriority="high" width="600" height="400">
+        <div class="hero-slider">
+          <div class="hero-slide active">
+            <img src="images/hero.png" alt="MANABIYA Bースタディ 講師と生徒の授業風景" loading="eager" fetchpriority="high" width="600" height="400">
+          </div>
+          <div class="hero-slide">
+            <img src="images/hero2.png" alt="MANABIYA Bースタディ 授業風景2" loading="lazy" width="600" height="400">
+          </div>
+          <div class="hero-slide">
+            <img src="images/hero3.png" alt="MANABIYA Bースタディ 授業風景3" loading="lazy" width="600" height="400">
+          </div>
+          <div class="hero-slide">
+            <img src="images/hero4.png" alt="MANABIYA Bースタディ 授業風景4" loading="lazy" width="600" height="400">
+          </div>
+        </div>
+        <div class="hero-slider-dots">
+          <button class="slider-dot active" aria-label="スライド1"></button>
+          <button class="slider-dot" aria-label="スライド2"></button>
+          <button class="slider-dot" aria-label="スライド3"></button>
+          <button class="slider-dot" aria-label="スライド4"></button>
+        </div>
       </div>
       <div class="hero-dots"></div>
       <div class="hero-badge-float b1">
@@ -1767,6 +1803,36 @@
   /* ════════════════════════════════════ */
 
   emailjs.init(PUBLIC_KEY);
+
+  /* ── Hero スライダー ── */
+  (function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots   = document.querySelectorAll('.slider-dot');
+    let current  = 0;
+    let timer;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function startAuto() {
+      timer = setInterval(() => goTo(current + 1), 3000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(timer);
+        goTo(i);
+        startAuto();
+      });
+    });
+
+    startAuto();
+  })();
 
   /* ── スマホ固定CTA：フォームに近づいたら隠す ── */
   const spCta   = document.getElementById('spCta');
