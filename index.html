@@ -1918,7 +1918,8 @@
   })();
 
   /* ── FAQ アコーディオン ── */
-  document.querySelectorAll('.faq-item').forEach(item => {
+  const faqItems = [...document.querySelectorAll('.faq-item')];
+  faqItems.forEach(item => {
     const btn = item.querySelector('.faq-q');
     const ans = item.querySelector('.faq-a');
     btn.addEventListener('click', () => {
@@ -1927,6 +1928,17 @@
       ans.style.maxHeight = open ? ans.scrollHeight + 'px' : '0px';
     });
   });
+  let faqTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(faqTimer);
+    faqTimer = setTimeout(() => {
+      faqItems.forEach(item => {
+        if (!item.classList.contains('open')) return;
+        const ans = item.querySelector('.faq-a');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      });
+    }, 150);
+  }, { passive: true });
 
   /* ── スマホ固定CTA ── */
   const spCta   = document.getElementById('spCta');
