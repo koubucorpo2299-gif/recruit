@@ -1800,7 +1800,6 @@ main{overflow-x:clip;display:block}
           <div class="f-ok-ic" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-ccheck"/></svg></div>
           <h3>ご応募ありがとうございます！</h3>
           <p id="okMailNote">確認メールを <strong id="okEmail"></strong> 宛にお送りしました。</p>
-          <p class="f-ok-note" id="okDocNote" hidden>履歴書・職務経歴書を自動で送信できませんでした。お手数ですが、<a href="mailto:manabiya.b-study@outlook.jp?subject=【講師募集】応募書類の送付">manabiya.b-study@outlook.jp</a> までメールでご送付ください。</p>
           <div class="f-next">
             <h4>今後の流れ</h4>
             <ol>
@@ -1920,7 +1919,7 @@ main{overflow-x:clip;display:block}
 
             <div class="fs">
               <h3 class="fs-title"><span class="fs-n" aria-hidden="true">4</span>応募書類</h3>
-              <p class="f-hint docs-hint">履歴書・職務経歴書を、それぞれ添付してください。対応形式：PDF・Word・JPEG・PNG。1ファイル1MBまで（写真は自動で縮小されます）。</p>
+              <p class="f-hint docs-hint">履歴書・職務経歴書を、それぞれ添付してください。対応形式：PDF・Word・JPEG・PNG。1ファイル5MBまで（写真は自動で縮小されます）。</p>
               <div class="f-row">
                 <div class="f-grp">
                   <label class="f-lbl" for="resume">履歴書 <span class="mk-req">必須</span></label>
@@ -1960,7 +1959,7 @@ main{overflow-x:clip;display:block}
             <div class="hp" aria-hidden="true"><label>URL<input type="text" id="hp_url" name="hp_url" tabindex="-1" autocomplete="off"></label></div>
 
             <div class="f-agree" id="agreeBox">
-              <p class="f-agree-txt">ご入力いただいた個人情報および添付いただいた履歴書・職務経歴書は、採用選考および選考に関するご連絡のみに利用し、第三者へ提供することはありません。送信には外部のメール送信サービス（EmailJS）を利用し、書類はメールに添付して送信されます。運営会社：株式会社beducate（<a href="https://beducate.jp/" target="_blank" rel="noopener">公式サイト</a>）</p>
+              <p class="f-agree-txt">ご入力いただいた個人情報および添付いただいた履歴書・職務経歴書は、採用選考および選考に関するご連絡のみに利用し、第三者へ提供することはありません。送信内容と書類は、運営会社（株式会社beducate）のサーバーからメールで塾の担当者へ送られます。運営会社：株式会社beducate（<a href="https://beducate.jp/" target="_blank" rel="noopener">公式サイト</a>）</p>
               <label class="f-agree-chk" for="agree"><input type="checkbox" id="agree" name="agree" required><span>上記に同意します</span> <span class="mk-req">必須</span></label>
               <p class="f-err" id="agree-err"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg>個人情報の取り扱いへの同意が必要です</p>
             </div>
@@ -2014,29 +2013,21 @@ main{overflow-x:clip;display:block}
 </aside>
 
 <!--
-  【メール送信】EmailJS を使用（js/email.min.js を同梱。CDN は使わない）
-  TEMPLATE_ADMIN : 塾への通知メール（To: manabiya.b-study@outlook.jp）
-  TEMPLATE_USER  : 応募者への確認メール（To: {{applicant_email}}）
-  利用可能な変数 : {{name}} {{furigana}} {{age}} {{status}} {{applicant_email}} {{phone}}
-                   {{days}} {{subjects}} {{wwork}} {{motivation}} {{sent_date}} {{attachment_note}}
-                   添付（TEMPLATE_ADMINのAttachmentsで設定）: resume_file(resume_name) cv_file(cv_name)
--->
-<script src="js/email.min.js" defer></script>
-<script>
-/*
+  【メール送信】Xserver 上の PHP（server/recruit-api/apply.php）が、
+    ・塾（manabiya.b-study@outlook.jp）へ通知メール（履歴書・職務経歴書を添付）
+    ・応募者へ確認メール
+  を送信します。設置手順は server/README.md を参照。
+  フォームの送信項目: name, furigana, age, status, email, phone, days[], subjects[], wwork, motivation,
+                      agree, hp_url(ハニーポット), elapsed, resume(ファイル), cv(ファイル)
   条件変更時の更新手順：本文 → JSON-LD（baseSalary/description/datePosted/dateModified）→ sitemap の lastmod → 外部求人媒体 → Search Console で再クロール依頼
-*/
+-->
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
   window.__bReady = true;
 
-  /* ════════ EmailJS 設定（変更禁止） ════════ */
-  const PUBLIC_KEY     = 'yEI8Aj73szSGL0Pnf';
-  const SERVICE_ID     = 'service_cbc6qvx';
-  const TEMPLATE_ADMIN = 'template_yffhej4';
-  const TEMPLATE_USER  = 'template_c7luaqw';
-  /* ══════════════════════════════════════ */
-  if (window.emailjs) emailjs.init({ publicKey: PUBLIC_KEY, blockHeadless: true });
+  /* ════════ 応募の送信先（Xserver 上の PHP。server/recruit-api/apply.php を設置） ════════ */
+  const APPLY_ENDPOINT = 'https://beducate.jp/recruit-api/apply.php';
 
   const MAIL = 'manabiya.b-study@outlook.jp';
   const root = document.documentElement;
@@ -2303,12 +2294,9 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── 応募書類（履歴書・職務経歴書）：PDF/Word はそのまま、写真は自動で縮小してメールに添付 ── */
   const DOCS = { resume: null, cv: null };
   const DOC_LABEL = { resume: '履歴書', cv: '職務経歴書' };
-  const MAX_BYTES = 1024 * 1024;
+  const MAX_BYTES = 5 * 1024 * 1024;
   const OK_EXT = /\.(pdf|docx?|jpe?g|png)$/i;
   const IS_IMG = /\.(jpe?g|png)$/i;
-  function readDataURL(f) {
-    return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = () => rej(r.error); r.readAsDataURL(f); });
-  }
   function loadImage(f) {
     return new Promise((res, rej) => {
       const u = URL.createObjectURL(f), img = new Image();
@@ -2317,16 +2305,17 @@ document.addEventListener('DOMContentLoaded', function () {
       img.src = u;
     });
   }
+  function toBlob(c, q) { return new Promise(res => c.toBlob(res, 'image/jpeg', q)); }
   async function shrinkImage(f) {
     const img = await loadImage(f);
-    const s = Math.min(1, 1600 / Math.max(img.naturalWidth, img.naturalHeight));
+    const s = Math.min(1, 2000 / Math.max(img.naturalWidth, img.naturalHeight));
     const c = document.createElement('canvas');
     c.width = Math.max(1, Math.round(img.naturalWidth * s)); c.height = Math.max(1, Math.round(img.naturalHeight * s));
     const ctx = c.getContext('2d'); ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, c.width, c.height); ctx.drawImage(img, 0, 0, c.width, c.height);
-    let q = 0.82, d = c.toDataURL('image/jpeg', q);
-    while (d.length * 0.75 > MAX_BYTES && q > 0.35) { q -= 0.1; d = c.toDataURL('image/jpeg', q); }
-    if (d.length * 0.75 > MAX_BYTES) throw new Error('too-large');
-    return d;
+    let q = 0.85, b = await toBlob(c, q);
+    while (b && b.size > MAX_BYTES && q > 0.35) { q -= 0.1; b = await toBlob(c, q); }
+    if (!b || b.size > MAX_BYTES) throw new Error('too-large');
+    return b;
   }
   function docMsg(id, text) {
     const m = document.querySelector('#' + id + '-err .msg');
@@ -2345,15 +2334,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!f) { mark(id, el.classList.contains('err')); return; }
     if (!OK_EXT.test(f.name)) { docFail(id, 'PDF・Word・JPEG・PNGのいずれかの形式で添付してください'); return; }
     try {
-      let data, name = f.name;
-      if (IS_IMG.test(f.name)) { data = await shrinkImage(f); name = f.name.replace(/\.[^.]+$/, '') + '.jpg'; }
-      else {
-        if (f.size > MAX_BYTES) { docFail(id, 'ファイルサイズは1MB以内にしてください（PDFの場合は圧縮するか、写真で添付してください）'); return; }
-        data = await readDataURL(f);
-      }
+      let blob = f, name = f.name;
+      if (IS_IMG.test(f.name)) { blob = await shrinkImage(f); name = f.name.replace(/\.[^.]+$/, '') + '.jpg'; }
+      else if (f.size > MAX_BYTES) { docFail(id, 'ファイルサイズは5MB以内にしてください（PDFの場合は圧縮するか、写真で添付してください）'); return; }
+      else blob = new Blob([await f.arrayBuffer()], { type: f.type });  // 選択直後にメモリへ読み込む（クラウド上のファイル等でも送信時に失敗しないように）
       if (document.getElementById(id).files[0] !== f) return; // 選び直された場合は破棄
-      DOCS[id] = { name: name, data: data };
-      label.textContent = '✓ ' + name + '（' + Math.max(1, Math.round(data.length * 0.75 / 1024)) + 'KB）';
+      DOCS[id] = { name: name, blob: blob };
+      label.textContent = '✓ ' + name + '（' + Math.max(1, Math.round(blob.size / 1024)) + 'KB）';
       mark(id, false);
     } catch (e) {
       docFail(id, 'ファイルを読み込めませんでした。別のファイルでお試しください');
@@ -2411,14 +2398,6 @@ document.addEventListener('DOMContentLoaded', function () {
     head.scrollIntoView({ behavior: smooth, block: 'start' });
     try { formOk.focus({ preventScroll: true }); } catch (e) { formOk.focus(); }
   }
-  function getChecked(name) {
-    return $$('input[name="' + name + '"]:checked').map(el => el.value).join('、') || '未選択';
-  }
-  function sentDate() {
-    const d = new Date();
-    return d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate() + ' ' + d.getHours() + ':' + String(d.getMinutes()).padStart(2, '0');
-  }
-
   let sending = false;
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -2435,64 +2414,52 @@ document.addEventListener('DOMContentLoaded', function () {
     const hp = $('#hp_url');
     if ((hp && hp.value) || performance.now() < 4000) { sending = true; showSuccess(valueOf('email')); return; }
 
-    if (!window.emailjs) {
-      showAlert('送信機能を読み込めませんでした。お手数ですが、<a href="mailto:' + MAIL + '?subject=【講師募集】応募">' + MAIL + '</a> までメールでご応募ください。');
-      return;
-    }
-
     sending = true;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="spinner" aria-hidden="true"></span>送信中…';
 
     const email = valueOf('email');
-    const params = {
-      name:            valueOf('name'),
-      furigana:        valueOf('furigana'),
-      age:             document.getElementById('age').value,
-      status:          document.getElementById('status').value,
-      applicant_email: email,
-      phone:           valueOf('phone'),
-      days:            getChecked('days'),
-      subjects:        getChecked('subjects'),
-      wwork:           getChecked('wwork'),
-      motivation:      ta.value.trim() || '（未記入）',
-      sent_date:       sentDate()
+    const fd = new FormData();
+    fd.append('name', valueOf('name'));
+    fd.append('furigana', valueOf('furigana'));
+    fd.append('age', document.getElementById('age').value);
+    fd.append('status', document.getElementById('status').value);
+    fd.append('email', email);
+    fd.append('phone', valueOf('phone'));
+    $$('input[name="days"]:checked').forEach(el => fd.append('days[]', el.value));
+    $$('input[name="subjects"]:checked').forEach(el => fd.append('subjects[]', el.value));
+    const ww = document.querySelector('input[name="wwork"]:checked');
+    if (ww) fd.append('wwork[]', ww.value);
+    fd.append('motivation', ta.value.trim());
+    fd.append('agree', '1');
+    fd.append('hp_url', ($('#hp_url') || {}).value || '');
+    fd.append('elapsed', String(Math.round(performance.now())));
+    fd.append('resume', DOCS.resume.blob, DOCS.resume.name);
+    fd.append('cv', DOCS.cv.blob, DOCS.cv.name);
+
+    const fail = msg => {
+      showAlert(msg || ('送信に失敗しました。大変お手数ですが、<a href="mailto:' + MAIL + '?subject=【講師募集】応募">' + MAIL + '</a> まで、履歴書・職務経歴書を添付してメールでご応募ください。'));
+      sending = false;
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = BTN_HTML.replace('この内容で応募する', '再度送信する');
+      try { submitBtn.focus({ preventScroll: true }); } catch (e2) { submitBtn.focus(); }
     };
 
-    // 履歴書・職務経歴書は「応募者宛の確認メール」には含めない（管理者宛のみ）
-    const files = {
-      resume_file: DOCS.resume.data, resume_name: DOCS.resume.name,
-      cv_file: DOCS.cv.data, cv_name: DOCS.cv.name
-    };
-    const noteOk = '添付書類：履歴書（' + DOCS.resume.name + '）／職務経歴書（' + DOCS.cv.name + '）。メールに添付されていない場合は、応募者へ再提出を依頼してください。';
-    const noteNg = '【要対応】書類の自動添付に失敗しました。応募者に履歴書（' + DOCS.resume.name + '）・職務経歴書（' + DOCS.cv.name + '）のメール送付を依頼してください。';
-    let attached = true;
+    let res, data = null;
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ADMIN, Object.assign({}, params, files, { attachment_note: noteOk }));
+      res = await fetch(APPLY_ENDPOINT, { method: 'POST', body: fd });
+      try { data = await res.json(); } catch (e3) { data = null; }
     } catch (err) {
-      // 添付付きで失敗した場合でも、応募自体を失わないよう、添付なしで再送する
-      attached = false;
-      try {
-        await emailjs.send(SERVICE_ID, TEMPLATE_ADMIN, Object.assign({}, params, { attachment_note: noteNg }));
-      } catch (err2) {
-        showAlert('送信に失敗しました。大変お手数ですが、<a href="mailto:' + MAIL + '?subject=【講師募集】応募">' + MAIL + '</a> まで直接メールにてご連絡ください。');
-        sending = false;
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = BTN_HTML.replace('この内容で応募する', '再度送信する');
-        try { submitBtn.focus({ preventScroll: true }); } catch (e2) { submitBtn.focus(); }
-        return;
-      }
+      fail(); return;
     }
+    if (res.status === 429) { fail('短時間に送信が続いたため、いったん受け付けられませんでした。しばらくしてからもう一度お試しいただくか、<a href="mailto:' + MAIL + '?subject=【講師募集】応募">' + MAIL + '</a> までご連絡ください。'); return; }
+    if (res.status === 422) { fail('入力内容に誤りがあるか、添付ファイルを受け付けられませんでした。内容をご確認のうえ、もう一度お試しください。'); return; }
+    if (!res.ok || !data || !data.ok) { fail(); return; }
 
     showSuccess(email);
-    if (!attached) { const dn = $('#okDocNote'); if (dn) dn.hidden = false; }
-    setTimeout(() => {
-      Promise.resolve()
-        .then(() => emailjs.send(SERVICE_ID, TEMPLATE_USER, params, { limitRate: { id: 'apply-user', throttle: 60000 } }))
-        .catch(() => {
-          okMailNote.textContent = '※確認メールの自動送信に失敗しましたが、ご応募は受け付けております。担当者より2〜3営業日以内にご連絡いたします。';
-        });
-    }, 1100);
+    if (data.confirm === false) {
+      okMailNote.textContent = '※確認メールの自動送信に失敗しましたが、ご応募は受け付けております。担当者より2〜3営業日以内にご連絡いたします。';
+    }
   });
 
   /* ── URL 共有（navigator.share があれば使用、なければコピー） ── */

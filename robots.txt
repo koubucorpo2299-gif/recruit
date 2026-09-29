@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /server/
 
 Sitemap: https://recruit.beducate.jp/sitemap.xml
