@@ -99,7 +99,7 @@
   {"@context":"https://schema.org","@type":"WebSite","@id":"https://recruit.beducate.jp/#website","url":"https://recruit.beducate.jp/","name":"MANABIYA Bースタディ 講師採用","alternateName":["Bスタディ 講師採用","Bースタディ 講師募集"],"inLanguage":"ja","publisher":{"@id":"https://recruit.beducate.jp/#organization"}}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebPage","@id":"https://recruit.beducate.jp/#webpage","url":"https://recruit.beducate.jp/","name":"塾講師バイト・求人｜鳥取県倉吉市・週1日1コマ〜・未経験OK｜MANABIYA Bースタディ","description":"鳥取県倉吉市の個別指導塾で塾講師を募集。週1日・1コマ（80分）から、未経験・大学生・社会人・主婦(夫)歓迎。コマ給1,600〜1,800円（時給換算1,200〜1,350円）、授業外の業務も時給1,200円で全額支給。交通費全額・駐車場あり。面接1回・最短2週間程度で内定。","inLanguage":"ja","isPartOf":{"@id":"https://recruit.beducate.jp/#website"},"about":{"@id":"https://recruit.beducate.jp/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://recruit.beducate.jp/images/ogp.jpg","width":1200,"height":630},"datePublished":"2026-09-15","dateModified":"2026-09-29"}
+  {"@context":"https://schema.org","@type":"WebPage","@id":"https://recruit.beducate.jp/#webpage","url":"https://recruit.beducate.jp/","name":"塾講師バイト・求人｜鳥取県倉吉市・週1日1コマ〜・未経験OK｜MANABIYA Bースタディ","description":"鳥取県倉吉市の個別指導塾で塾講師を募集。週1日・1コマ（80分）から、未経験・大学生・社会人・主婦(夫)歓迎。コマ給1,600〜1,800円（時給換算1,200〜1,350円）、授業外の業務も時給1,200円で全額支給。交通費全額・駐車場あり。面接1回・最短2週間程度で内定。","inLanguage":"ja","isPartOf":{"@id":"https://recruit.beducate.jp/#website"},"about":{"@id":"https://recruit.beducate.jp/#organization"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://recruit.beducate.jp/images/ogp.jpg","width":1200,"height":630},"datePublished":"2026-09-15","dateModified":"2026-11-15"}
   </script>
   <script type="application/ld+json">
 {
@@ -913,9 +913,9 @@ main{overflow-x:clip;display:block}
 
 /* ---------- flow ---------- */
 .flow{background:var(--paper)}
-.flow-list{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
-.flow-list::before{content:"";position:absolute;top:26px;left:30px;right:calc(10% + 8px);height:4px;border-radius:2px;background:var(--brand-2)}
-.flow-list::after{content:"";position:absolute;top:22px;right:calc(10% - 12px);width:22px;height:12px;background:var(--pencil) no-repeat right center/auto 12px;background-size:80px 12px}
+.flow-list{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.flow-list::before{content:"";position:absolute;top:26px;left:30px;right:calc(8.33% + 8px);height:4px;border-radius:2px;background:var(--brand-2)}
+.flow-list::after{content:"";position:absolute;top:22px;right:calc(8.33% - 12px);width:22px;height:12px;background:var(--pencil) no-repeat right center/auto 12px;background-size:80px 12px}
 .step{position:relative}
 .step-no{position:relative;z-index:1;width:56px;height:56px;border-radius:10px 28px 28px 10px;display:grid;place-items:center;background:var(--brand);color:#fff;font-family:var(--f-dp);font-size:26px;font-weight:900;box-shadow:0 0 0 6px var(--paper)}
 .step:last-child .step-no{background:var(--sun);color:var(--ink)}
@@ -1218,6 +1218,40 @@ main{overflow-x:clip;display:block}
   .sp-btn{margin-left:0;flex:1}
 }
 @media (min-width:641px){.sp-tel{display:none}}
+
+/* ── よくある不安 ／ 要点 ── */
+.worry{background:#fff}
+.wy-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.wy{display:flex;flex-direction:column;padding:24px 22px 20px;border-radius:18px;background:var(--paper);box-shadow:inset 0 0 0 1px var(--brand-100)}
+.wy-ic{width:46px;height:46px;border-radius:10px 23px 23px 10px;display:grid;place-items:center;background:var(--sun);color:var(--ink)}
+.wy-ic .ic{width:23px;height:23px}
+.wy-q{margin-top:16px;color:var(--ink);font-size:17px;font-weight:700;line-height:1.5}
+.wy-a{display:flex;gap:10px;margin-top:12px;color:var(--mid);font-size:14.5px;line-height:1.85;flex:1}
+.wy-a b{color:var(--ink);font-weight:700}
+.wy-ab{flex:none;width:24px;height:24px;margin-top:2px;border-radius:6px;display:grid;place-items:center;background:var(--brand);color:#fff;font-family:var(--f-dp);font-size:13px;font-weight:700}
+.wy-more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;align-self:flex-start;color:var(--brand-700);font-size:14px;font-weight:700}
+.wy-more .ic{width:15px;height:15px}
+.sum{margin-top:44px;padding:28px 30px;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 2px var(--brand-100)}
+.sum-h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;color:var(--ink);font-size:19px;font-weight:700}
+.sum-h .ic{width:22px;height:22px;color:var(--brand)}
+.sum-up{margin-left:auto;color:var(--sub);font-size:13px;font-weight:500}
+.sum-wrap{margin-top:16px;overflow-x:auto}
+.sum-t{width:100%;border-collapse:collapse;font-size:15px;line-height:1.75}
+.sum-t th{width:8.5em;padding:12px 16px 12px 0;color:var(--brand-700);font-weight:700;text-align:left;vertical-align:top;white-space:nowrap;border-top:1px solid var(--line)}
+.sum-t td{padding:12px 0;color:var(--ink2);border-top:1px solid var(--line)}
+.sum-t tr:first-child th,.sum-t tr:first-child td{border-top:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:980px){.wy-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){
+  .wy-list{grid-template-columns:1fr;gap:12px}
+  .wy{padding:20px 18px 16px}
+  .sum{margin-top:32px;padding:20px 18px}
+  .sum-up{margin-left:0;width:100%}
+  .sum-t,.sum-t tbody,.sum-t tr,.sum-t th,.sum-t td{display:block;width:auto}
+  .sum-t th{padding:12px 0 0;border-top:1px solid var(--line);white-space:normal}
+  .sum-t td{padding:2px 0 12px;border-top:0}
+  .sum-t tr:first-child th{border-top:0;padding-top:0}
+}
 </style>
 </head>
 <body>
@@ -1364,11 +1398,27 @@ main{overflow-x:clip;display:block}
   </div>
 </section>
 
+<!-- ============ 不安と答え／要点 ============ -->
+<section class="sec worry" id="worry" aria-labelledby="worry-h">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <p class="eyebrow"><span class="eb-no">02</span>よくある不安</p>
+      <h2 class="h2" id="worry-h"><span class="nw">応募前の不安に、</span><span class="nw hl">先にお答えします</span></h2>
+      <p class="lead">はじめて塾講師に応募する方から、特によく聞かれる4つの不安です。</p>
+    </div>
+    <ul class="wy-list"><li class="wy rv"><span class="wy-ic" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-grad"/></svg></span><p class="wy-q">教えられるか不安…</p><p class="wy-a"><span class="wy-ab" aria-hidden="true">A</span><span><b>未経験の方は約1ヶ月の研修</b>があります。担当は国語・数学・英語・理科・社会から選んだ<b>得意科目だけ</b>です。</span></p><a class="wy-more" href="#training">詳しく見る<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li><li class="wy rv d1"><span class="wy-ic" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-coins"/></svg></span><p class="wy-q">授業以外はタダ働き？</p><p class="wy-a"><span class="wy-ab" aria-hidden="true">A</span><span>報告書作成・質問対応・教室運営などの指導外業務も、<b>時給1,200円で全額支給</b>します。</span></p><a class="wy-more" href="#job">詳しく見る<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li><li class="wy rv d2"><span class="wy-ic" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-cal"/></svg></span><p class="wy-q">学業や本業と続けられる？</p><p class="wy-a"><span class="wy-ab" aria-hidden="true">A</span><span><b>週1日・1コマ（80分）から</b>、残業なし。テスト期間やご家庭の事情に合わせてシフトを調整できます。</span></p><a class="wy-more" href="#workstyle">詳しく見る<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li><li class="wy rv d3"><span class="wy-ic" aria-hidden="true"><svg class="ic" focusable="false"><use href="#i-file"/></svg></span><p class="wy-q">応募の準備が大変そう…</p><p class="wy-a"><span class="wy-ab" aria-hidden="true">A</span><span>履歴書・職務経歴書は<b>スマホで撮った写真でも添付OK</b>。面接は筆記試験と同日の<b>1回のみ</b>です。</span></p><a class="wy-more" href="#apply">詳しく見る<svg class="ic" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></li></ul>
+    <div class="sum rv" id="summary">
+      <h3 class="sum-h"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-ccheck"/></svg>この求人の要点<span class="sum-up">最終更新日 <time datetime="2026-11-15">2026年11月15日</time></span></h3>
+      <div class="sum-wrap"><table class="sum-t"><caption class="sr-only">MANABIYA Bースタディ 塾講師（アルバイト・パート）募集の要点</caption><tbody><tr><th scope="row">職種</th><td>塾講師（個別指導）／小・中・高校生対象。1対3が基本（1対1・1対2もあり）</td></tr><tr><th scope="row">給与</th><td>コマ給1,600〜1,800円（1コマ80分・時給換算1,200〜1,350円）＋指導外業務 時給1,200円</td></tr><tr><th scope="row">勤務</th><td>シフト制。週1日・1コマから／平日16:00〜22:00・土日祝10:00〜22:00／残業なし</td></tr><tr><th scope="row">研修</th><td>塾講師が未経験の方は約1ヶ月</td></tr><tr><th scope="row">応募資格</th><td>学歴・指導経験不問。大学生・社会人・主婦（夫）・既卒・第二新卒歓迎</td></tr><tr><th scope="row">応募書類</th><td>履歴書・職務経歴書（応募フォームで添付）</td></tr><tr><th scope="row">選考</th><td>書類選考 → 面接約20分＋筆記試験約40分（同日1回）→ 内定（最短2週間程度）</td></tr><tr><th scope="row">勤務地</th><td>鳥取県倉吉市海田西町2丁目95（倉吉駅から車で約5分・駐車場あり）</td></tr><tr><th scope="row">問い合わせ</th><td>TEL 0858-27-1991／manabiya.b-study@outlook.jp</td></tr></tbody></table></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 02 APPEAL ============ -->
 <section class="sec appeal" id="appeal" aria-labelledby="appeal-h">
   <div class="wrap">
     <div class="sec-hd split rv">
-      <p class="eyebrow"><span class="eb-no">02</span>働く魅力</p>
+      <p class="eyebrow"><span class="eb-no">03</span>働く魅力</p>
       <h2 class="h2" id="appeal-h"><span class="nw">Bースタディで</span><span class="nw">塾講師として働く、</span><span class="nw hl">6つの理由</span></h2>
       <p class="lead">得意を活かし、生活と両立しながら、授業そのものに集中できる。そのための環境を整えています。</p>
     </div>
@@ -1429,7 +1479,7 @@ main{overflow-x:clip;display:block}
 <section class="sec job-sec" id="job" aria-labelledby="job-h">
   <div class="wrap">
     <div class="sec-hd split rv">
-      <p class="eyebrow"><span class="eb-no">03</span>仕事内容</p>
+      <p class="eyebrow"><span class="eb-no">04</span>仕事内容</p>
       <h2 class="h2" id="job-h"><span class="nw">仕事内容と、</span><span class="nw hl">それぞれの給与</span></h2>
       <p class="lead">勤務中に担当する主な業務です。授業はコマ給、授業外の業務は時給で支給します。</p>
     </div>
@@ -1488,7 +1538,7 @@ main{overflow-x:clip;display:block}
 <section class="sec salary dark on-dark" id="salary" aria-labelledby="salary-h">
   <div class="wrap">
     <div class="sec-hd rv">
-      <p class="eyebrow"><span class="eb-no">04</span>給与</p>
+      <p class="eyebrow"><span class="eb-no">05</span>給与</p>
       <h2 class="h2" id="salary-h"><span class="nw">授業はコマ給、</span><span class="nw">授業外は時給。</span><span class="nw hl">すべての業務に給与を。</span></h2>
       <p class="lead">コマ給は1コマ80分ごと。担当する生徒の人数（<span class="nb">1対1</span>〜<span class="nb">1対3</span>）に応じて<span class="nb">1,600円〜1,800円</span>です。報告書作成・自習室の質問対応・教室運営などの指導外業務も、<span class="nb">時給1,200円</span>で全額支給します。</p>
     </div>
@@ -1530,7 +1580,7 @@ main{overflow-x:clip;display:block}
 <section class="sec workstyle" id="workstyle" aria-labelledby="ws-h">
   <div class="wrap">
     <div class="sec-hd rv">
-      <p class="eyebrow"><span class="eb-no">05</span>働き方</p>
+      <p class="eyebrow"><span class="eb-no">06</span>働き方</p>
       <h2 class="h2" id="ws-h"><span class="nw">週1日・1コマから。</span><span class="nw hl">生活に合わせて選べる働き方</span></h2>
       <p class="lead">平日は16時から、土日祝は10時から。シフトはご希望を考慮して決定します。</p>
     </div>
@@ -1608,7 +1658,7 @@ main{overflow-x:clip;display:block}
 <section class="sec req" id="requirements" aria-labelledby="req-h">
   <div class="wrap">
     <div class="sec-hd rv">
-      <p class="eyebrow"><span class="eb-no">06</span>応募資格</p>
+      <p class="eyebrow"><span class="eb-no">07</span>応募資格</p>
       <h2 class="h2" id="req-h"><span class="nw">応募資格・</span><span class="nw">求める人物像</span></h2>
       <p class="lead"><span class="nb">学歴・指導経験は</span>問いません。得意科目が<span class="nb">ひとつ</span>あれば、ご応募いただけます。</p>
     </div>
@@ -1644,7 +1694,7 @@ main{overflow-x:clip;display:block}
 <section class="sec details" id="details" aria-labelledby="details-h">
   <div class="wrap">
     <div class="sec-hd rv">
-      <p class="eyebrow"><span class="eb-no">07</span>募集要項</p>
+      <p class="eyebrow"><span class="eb-no">08</span>募集要項</p>
       <h2 class="h2" id="details-h"><span class="nw">募集要項<span class="h2-sep">｜</span></span><span class="nw h2-sub">塾講師（アルバイト・パート）</span></h2>
     </div>
     <dl class="dl rv">
@@ -1671,7 +1721,7 @@ main{overflow-x:clip;display:block}
       <div class="row"><dt>応募書類</dt><dd><strong class="lg">履歴書・職務経歴書</strong>応募フォームの「応募書類」欄から添付してください（PDF・Word・写真に対応）。</dd></div>
       <div class="row"><dt>選考</dt><dd>書類選考 → 面接（約20分）＋筆記試験（<span class="nb">約40分</span>）を<span class="nb">同日1回のみ</span> → 内定（<span class="nb">最短2週間程度</span>）<br>筆記試験は、指導可能な教科によって内容が変わります。</dd></div>
       <div class="row"><dt>お問い合わせ</dt><dd>電話：<a href="tel:0858271991">0858-27-1991</a>（教室）<br>メール：<a href="mailto:manabiya.b-study@outlook.jp">manabiya.b-study@outlook.jp</a></dd></div>
-      <div class="row"><dt>掲載情報</dt><dd>掲載開始日 <span class="nb"><time datetime="2026-09-15">2026年9月15日</time>／</span>最終更新日 <time datetime="2026-09-29">2026年9月29日</time></dd></div>
+      <div class="row"><dt>掲載情報</dt><dd>掲載開始日 <span class="nb"><time datetime="2026-09-15">2026年9月15日</time>／</span>最終更新日 <time datetime="2026-11-15">2026年11月15日</time></dd></div>
     </dl>
   </div>
 </section>
@@ -1680,7 +1730,7 @@ main{overflow-x:clip;display:block}
 <section class="sec location" id="location" aria-labelledby="loc-h">
   <div class="wrap">
     <div class="sec-hd rv">
-      <p class="eyebrow"><span class="eb-no">08</span>勤務地</p>
+      <p class="eyebrow"><span class="eb-no">09</span>勤務地</p>
       <h2 class="h2" id="loc-h"><span class="nw">勤務地・アクセス<span class="h2-sep">｜</span></span><span class="nw h2-sub">倉吉駅から車で約5分</span></h2>
     </div>
     <div class="loc-grid">
@@ -1715,8 +1765,8 @@ main{overflow-x:clip;display:block}
 <section class="sec flow" id="flow" aria-labelledby="flow-h">
   <div class="wrap">
     <div class="sec-hd split rv">
-      <p class="eyebrow"><span class="eb-no">09</span>選考の流れ</p>
-      <h2 class="h2" id="flow-h"><span class="nw">応募から</span><span class="nw">内定までの流れ</span></h2>
+      <p class="eyebrow"><span class="eb-no">10</span>選考の流れ</p>
+      <h2 class="h2" id="flow-h"><span class="nw">応募から</span><span class="nw">研修・指導スタートまでの流れ</span></h2>
       <p class="lead">面接は筆記試験と同日の<span class="nb">1回のみ</span>。ご応募から内定まで<span class="nb">最短2週間程度</span>です。</p>
     </div>
     <ol class="flow-list">
@@ -1725,6 +1775,7 @@ main{overflow-x:clip;display:block}
       <li class="step rv d2"><span class="step-no" aria-hidden="true">3</span><h3>書類選考</h3><p>添付いただいた<span class="nb">履歴書・職務経歴書</span>をもとに選考を行います。</p></li>
       <li class="step rv d3"><span class="step-no" aria-hidden="true">4</span><h3>面接＋筆記試験</h3><p>面接（約20分）と筆記試験（<span class="nb">約40分</span>）を同日に実施します。面接は<span class="nb">1回のみ</span>です。筆記試験は、指導可能な教科によって内容が変わります。</p><ul class="badges"><li>面接 約20分</li><li>筆記 約40分</li><li>面接<span class="nb">1回のみ</span></li></ul></li>
       <li class="step rv d3"><span class="step-no" aria-hidden="true">5</span><h3>内定</h3><p>ご応募から<span class="nb">最短2週間程度</span>でご連絡します。</p><ul class="badges"><li><span class="nb">最短2週間程度</span></li></ul></li>
+      <li class="step rv d3"><span class="step-no" aria-hidden="true">6</span><h3>研修・指導スタート</h3><p>塾講師が未経験の方は、<span class="nb">約1ヶ月の研修</span>を実施します。</p><ul class="badges"><li>未経験は研修あり</li></ul></li>
     </ol>
     <div class="icta rv">
       <p>まずは応募フォームから。面接は<span class="nb">1回のみ</span>、<span class="nb">最短2週間程度</span>で内定です。</p>
@@ -1737,7 +1788,7 @@ main{overflow-x:clip;display:block}
 <section class="sec faq" id="faq" aria-labelledby="faq-h">
   <div class="wrap faq-grid">
     <div class="sec-hd rv">
-      <p class="eyebrow"><span class="eb-no">10</span>よくある質問</p>
+      <p class="eyebrow"><span class="eb-no">11</span>よくある質問</p>
       <h2 class="h2" id="faq-h"><span class="nw">塾講師バイトの</span><span class="nw">よくある質問</span></h2>
       <p class="lead">応募前に気になる点をまとめました。その他のご質問は、電話 <a href="tel:0858271991">0858-27-1991</a> または <a href="mailto:manabiya.b-study@outlook.jp?subject=【講師募集】応募前の質問">manabiya.b-study@outlook.jp</a> までお気軽にどうぞ。</p>
     </div>
@@ -1786,7 +1837,7 @@ main{overflow-x:clip;display:block}
   <div class="wrap">
     <div class="fcard" id="fcard">
       <div class="fcard-hd dark on-dark">
-        <p class="eyebrow"><span class="eb-no">11</span>応募フォーム</p>
+        <p class="eyebrow"><span class="eb-no">12</span>応募フォーム</p>
         <h2 class="h2" id="apply-h"><span class="nw">応募フォーム<span class="h2-sep">｜</span></span><span class="nw h2-sub">塾講師（アルバイト・パート）</span></h2>
         <p class="fh-txt">送信後、ご入力のメールアドレスに確認メールが自動で届きます。担当者より<span class="nb">2〜3営業日</span>以内にご連絡します。<span class="nb">履歴書・職務経歴書</span>の添付が必要です。</p>
         <ol class="mini-steps" aria-label="応募後の流れ">
